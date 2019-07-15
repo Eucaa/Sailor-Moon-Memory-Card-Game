@@ -44,8 +44,9 @@ gameGrid.sort(() => 0.5 - Math.random());
 let firstGuess = '';
 let secondGuess = '';
 let count = 0;
-let previousTarget = null;
-let delay = 1200;
+let previousTarget = 0;
+let delay = 1000;
+
 
 // Grab the div with an id of root
 const game = document.getElementById('game');
@@ -107,14 +108,14 @@ grid.addEventListener('click', function(event) {
   // Let's target the event when clicked
   let clicked = event.target;
 
-  // Do not allow the grid section (html) itself to be selected; only select divs inside the grid
-  if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected')) {
+  // Do not allow the grid section (html) itself to be selected; only select divs inside the grid. The new flipped (clicked) card (div) may not be clicked twice and seen as a one-card match.
+  if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected'))  {
     return;
   }
   
   if (count < 2) {
     count++;
-    if (count === 1) {
+    if (count === 1) {  // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
       firstGuess = clicked.parentNode.dataset.name;
       console.log(firstGuess);
       clicked.parentNode.classList.add('selected');

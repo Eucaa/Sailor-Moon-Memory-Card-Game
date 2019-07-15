@@ -2,65 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sailor Moon Memory Card Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sailor Moon TEST</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style2.css"/>
     <link rel="icon" href="assets/images/lunaBall.png">
     
 </head>
 <body>
- 
- <div class="container sailor">
-     <img src="assets/images/sailor_bg1.jpg" alt="background">
-    <header>
-    <h1>Sailor Moon Game</h1>
-    <section class="score-panel">
+    
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
 
-        <ul class="stars">
-    <li><i class="fa fa-star"></i></li>
-    <li><i class="fa fa-star"></i></li>
-    <li><i class="fa fa-star"></i></li>
-    </ul>
+  </div>
+</div>
+    
+    <div class"container">
+        <!--<div class="row">
+            <div class="col-md-3 col-md-6 col-md-3"></div>
+        </div> -->   
+        <div>
+        <img class="help-btn" src="assets/images/help-btn.png"></img>
+        <h4>How to Play</h4>
+        </div>
+    <h1>Sailor Moon Game Test</h1>
+
+    <div class="score-panel">
     
         <span class="moves">0</span> Moves
-        <div class="restart">
-        RESTART
-    <i class="fa fa-repeat"></i>
-            </div>
-
         <span class="timer">
-
-        Timer 00:00:00
-
+            <span id="time">60</span> seconds left
         </span>
-    </section>
-    </header>
-    
-    <div id="game"></div>
-    
-   <div class="modal">
-   <div class="modal-content">
-       <h2 class="modal-title">Congratulations !</h2>
-       <p class="modal-message">You won !</p>
-  <div class="modal-element">
-      <span>Time :</span>
-       </div>
-       <div class="modal-element">
-           <span>Moves :</span>
-       </div>
-       <div class="modal-element">
-           <span> Stars :</span> 
-        </div>
-       </div>
+        
+        <span class="buttonReset">
+         <button id="reset-btn">Reset</button>
+        </span>
     </div>
-   </div>
     
+    
+    <div id="game">
+    </div>
+    
+    
+    </div>
+    
+    
+    <div id="popup1" class="overlay">   <!-- NEW -->
+            <div class="popup">
+                <h2>Congratulations!</h2>
+                <a class="close" href=# >×</a>
+                <div class="content-1">
+                    Congratulations you're a winner!
+                </div>
+                <div class="content-2">
+                    <p>You made <span id=finalMove> </span> moves </p>
+                    <p>in <span id=totalTime> </span> </p>
+                </div>
+                <button id="play-again" onclick="playAgain()">
+                    Play again</a>
+                </button>
+            </div>
+        </div>  <!-- END NEW -->
+    
+    <footer>
+		<p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
+	</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/js/script2.js"></script>
 </body>
+
 </html>

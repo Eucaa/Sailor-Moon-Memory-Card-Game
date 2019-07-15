@@ -4,39 +4,29 @@ font-family: 'Great Vibes', cursive;
 font-family: 'Oswald', sans-serif;
 */
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-body {
-    background-image: url(assets/images/sailor_bg1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+  background-image: url('../images/sailor_bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    background-color: #fad7e1;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin: 20px 0;
+  background: transparent;
 }
 
 h1 {
@@ -47,167 +37,160 @@ h1 {
     text-transform: full-width;
 }
 
-/*
- * Styles for the deck of cards
- */
-
-.deck {
-    width: 660px;
-    min-height: 680px;
-    /*background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);*/
-    padding: 32px;
-    border-radius: 10px;
-    /*box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);*/
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 3em;
+.grid {
+  max-width: 700px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -moz-box-pack: space-evenly;
+  -webkit-box-pack: space-evenly;
+  -ms-box-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
-.deck .card {
-    height: 125px;
-    width: 125px;
-    background: #2e3d49;
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+.card {
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.deck .card.open {
-    font-size: 33px;
-    transform: rotateY(0);
-    background: #02b3e4;
-    cursor: default;
+.card,
+.front,
+.back {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  
 }
 
-
-.deck .card.match {
-    cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+.back,
+.front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          
 }
 
-/*
- * Styles for the Score Panel
- */
+.front {
+  background: #ece7cb url('../images/sailor-cover.png') no-repeat center center / contain;
 
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: rgba(0,0,0,.8) !important;
+}
+
+/* --- Score Panel --- */
 .score-panel {
-    text-align: left;
-    width: 660px;
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 2em;
 }
 
-.score-panel .stars,
-.modal .stars
-{
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    margin: 0 5px 0 0;
-    color: gold; 
-}
+/* --- Additional Styling --- */
 
-.score-panel .stars li,
-.modal .stars li
-{
-    list-style: none;
-    display: inline-block;
-}
-
-.score-panel .restart {
+.help-btn {
+    width: 75px;
+    height: 100px;
+    position: relative;
     float: right;
-    display: block;
-    margin :0 0 0 80px;
-    cursor: pointer;
+    margin: 20px;
 }
 
-.score-panel .timer {
-    margin: 0 0 0 50px;
-    display: inline-block;
-     
-    
+/* --- Modal styling --- */
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
 }
 
-/*Style for the popup modal*/
-
-.modal {
-    display: none;
-    top : 0;
-    right : 0;
-    bottom : 0;
-    left : 0;
-    position: fixed;
-    background-color: rgba(0,0,0,0.6);
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+  
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 85%;
+	position: relative;
+	transition: all 5s ease-in-out;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+  
+.popup, h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
 }
 
-.modal-content {
-    max-width: 360px;
-    padding : 40px;
-    margin: 5em auto;
-    border-radius: 10px;
-    background-color: cyan;
-    
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
 }
 
-.modal-title {
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-    font-weight: 400;
+.popup .close:hover {
+	color: #E5F720;
 }
 
-.modal-elements {
-    display: inline-block;
-    align-items: center;
+.popup .content-1,
+.content-2 {
+	max-height: 30%;
+	overflow: auto;
+	text-align: center;
 }
 
-.modal-message {
-    font-size: 2em;
-    text-align: center;
-}
-
-/*Media queries*/
-
-@media only screen and (max-width: 600px) {
-
-    header {
-        width: 100%;
-        justify-content: space-around;
-    }
-    
-    .score-panel {
-        width: 100%;
-        font-size: 14px;
-    } 
-    
-    .score-panel .timer {
-        margin: 0 0 0 20px;
-        display: inline-block;
-    }
-    .score-panel .restart {
-    margin: 0 0 0 45px;    
-    }
-    
-    .deck {
-        width: 100%;
-        justify-content: space-around;
-        box-shadow: none;
-    }
-    
-    .deck .card {
-        width: 70px;
-        height: 70px;
- 
-    }
-    
-    .deck .card.open {
-      font-size: 25px;    
-    }
-    
+#play-again {
+	background-color: #141214;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #ffffff;
+	border-radius: 5px;
 }
