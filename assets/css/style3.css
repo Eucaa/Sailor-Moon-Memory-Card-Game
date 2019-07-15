@@ -12,10 +12,10 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-image: url('../images/sailor_bg1.jpg');
 }
 
 body {
-	background: #ffffff;
 	font-family: 'Permanent Marker', cursive;
 	font-size: 16px;
 }
@@ -39,10 +39,8 @@ h1 {
 
 .deck {
 	width: 85%;
-	background: #716F71;
 	padding: 1rem;
 	border-radius: 4px;
-	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
