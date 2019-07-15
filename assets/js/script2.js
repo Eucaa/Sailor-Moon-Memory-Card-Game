@@ -48,8 +48,8 @@ let previousTarget = 0;
 let delay = 900;
 let counter = 60;
 let moveCounter = 0;
-let closeicon = document.querySelector(".close"); // NEW
-let modal = document.getElementById("popup1");  // NEW
+let closeicon = document.querySelector(".close");
+
 
 
 var resetAll = function (){
@@ -179,8 +179,8 @@ $(window).load(function(){
 
 // NEW until rule 192
 function congrats(){
-    if (event.length === 16){
-        clearInterval(interval);
+    if (grid.count === 16){
+        resetGuesses(interval);
 
         // show congratulations modal
         modal.classList.add("show");
