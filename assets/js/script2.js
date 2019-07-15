@@ -99,7 +99,6 @@ gameGrid.forEach(item => {
   // Apply the background image of the div to the cardList image
   card.style.backgroundImage = `url(${item.img})`;
   
-  
 
   // Append the div to the grid section
   grid.appendChild(card);
@@ -191,7 +190,7 @@ function congrats() {
         finalTime = counter.innerHTML;
 
         // show congratulations modal
-        modal.classList.add("match");
+        modal.classList.add("show");
 
         document.getElementById("finalMove").innerHTML = moveCounter;
         document.getElementById("totalTime").innerHTML = finalTime;
@@ -202,13 +201,13 @@ function congrats() {
 }
   function closeModal(){
     closeicon.addEventListener("click", function(e){
-        modal.classList.remove("match");
+        modal.classList.remove("show");
         startGame();
         
-  function playAgain(){
-    modal.classList.remove("match");
-    startGame();
-}
-        
     });
+}
+
+function playAgain(){
+    modal.classList.remove("show");
+    startGame();
 }
