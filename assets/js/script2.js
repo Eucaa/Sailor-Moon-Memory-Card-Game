@@ -173,7 +173,7 @@ var interval = setInterval(function() {
 
 
 // Modal on page load
-$(window).load(function(){        
+$(window).ready(function(){        
    $('#myModal').modal('show');
     }); 
 

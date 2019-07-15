@@ -126,6 +126,10 @@ h1 {
     margin: 20px;
 }
 
+.disclaimer {
+  text-align: center;
+}
+
 /* --- Modal styling --- */
 .overlay {
 	position: fixed;
