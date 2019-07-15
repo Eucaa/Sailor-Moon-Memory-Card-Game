@@ -187,7 +187,7 @@ $(window).ready(function(){
 // NEW until rule 192
 function congrats() {
     if (grid.count === 16){
-        resetGuesses(interval);
+        clearInterval(interval);
         finalTime = counter.innerHTML;
 
         // show congratulations modal
@@ -200,7 +200,6 @@ function congrats() {
         closeModal();
     }
 }
-
   function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("match");
