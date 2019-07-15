@@ -73,6 +73,10 @@ grid.setAttribute('class', 'grid');
 // Append the grid section to the game div
 game.appendChild(grid);
 
+// Game load in body
+document.body.onload = startGame();
+
+function startGame(){
 
 // For each item in the cardList array...
 // cardList.forEach(item => {
@@ -94,6 +98,8 @@ gameGrid.forEach(item => {
   back.classList.add('back');
   // Apply the background image of the div to the cardList image
   card.style.backgroundImage = `url(${item.img})`;
+  
+  
 
   // Append the div to the grid section
   grid.appendChild(card);
@@ -131,7 +137,7 @@ grid.addEventListener('click', function(event) {
     return;
   }
 
-  
+ 
   if (count < 2) {
     count++;
     if (count === 1) {  // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
@@ -171,28 +177,39 @@ var interval = setInterval(function() {
     }
 }, 1000);
 
+}
 
-// Modal on page load
+// Modal on page load (start-modal)
 $(window).ready(function(){        
    $('#myModal').modal('show');
     }); 
 
 // NEW until rule 192
-function congrats(){
+function congrats() {
     if (grid.count === 16){
         resetGuesses(interval);
+        finalTime = counter.innerHTML;
 
         // show congratulations modal
-        modal.classList.add("show");
+        modal.classList.add("selected");
+
+        document.getElementById("finalMove").innerHTML = moveCounter;
+        document.getElementById("totalTime").innerHTML = finalTime;
 
         //closeicon on modal
         closeModal();
     }
 }
 
-function closeModal(){
+  function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
-        resetAll();
+        startGame();
+        
+  function playAgain(){
+    modal.classList.remove("show");
+    startGame();
+}
+        
     });
 }
