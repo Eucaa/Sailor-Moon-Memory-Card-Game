@@ -191,7 +191,7 @@ function congrats() {
         finalTime = counter.innerHTML;
 
         // show congratulations modal
-        modal.classList.add("selected");
+        modal.classList.add("match");
 
         document.getElementById("finalMove").innerHTML = moveCounter;
         document.getElementById("totalTime").innerHTML = finalTime;
@@ -203,11 +203,11 @@ function congrats() {
 
   function closeModal(){
     closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
+        modal.classList.remove("match");
         startGame();
         
   function playAgain(){
-    modal.classList.remove("show");
+    modal.classList.remove("match");
     startGame();
 }
         
