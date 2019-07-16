@@ -45,11 +45,11 @@ let firstGuess = '';
 let secondGuess = '';
 let count = 0;
 let previousTarget = 0;
-let delay = 900;
+let delay = 1000;
 let counter = 60;
 let moveCounter = 0;
 let closeicon = document.querySelector(".close");
-
+let modal = document.getElementById("popup1");
 
 
 var resetAll = function (){
@@ -178,14 +178,8 @@ var interval = setInterval(function() {
 
 }
 
-// Modal on page load (start-modal)
-$(window).ready(function(){        
-   $('#myModal').modal('show');
-    }); 
-
-// NEW until rule 192
 function congrats() {
-    if (grid.count === 16){
+    if (grid.length === 16){
         clearInterval(interval);
         finalTime = counter.innerHTML;
 
@@ -199,7 +193,8 @@ function congrats() {
         closeModal();
     }
 }
-  function closeModal(){
+
+ function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
         startGame();
@@ -211,3 +206,9 @@ function playAgain(){
     modal.classList.remove("show");
     startGame();
 }
+
+// Modal on page load (start-modal)
+$(window).ready(function(){        
+   $('#myModal').modal('show');
+    }); 
+ 

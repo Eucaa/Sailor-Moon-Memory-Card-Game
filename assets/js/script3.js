@@ -1,6 +1,6 @@
 // cards array holds all cards
 let card = document.getElementsByClassName("card");
-let cards = [...card]
+let cards = [...card];  // Loop through each card till the full length of the cards array is covered.
 console.log(cards);
 
 // deck of all cards in game
