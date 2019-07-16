@@ -185,14 +185,17 @@ function congrats() {
 
         // show congratulations modal
         modal.classList.add("show");
+        ;
 
         document.getElementById("finalMove").innerHTML = moveCounter;
         document.getElementById("totalTime").innerHTML = finalTime;
-
+        
+        
         //closeicon on modal
         closeModal();
     }
 }
+congrats();
 
  function closeModal(){
     closeicon.addEventListener("click", function(e){

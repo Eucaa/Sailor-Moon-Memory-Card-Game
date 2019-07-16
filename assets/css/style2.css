@@ -130,6 +130,33 @@ h1 {
   text-align: center;
 }
 
+.stage-btn1 {
+    width: 140px;
+    height: 115px;
+    position: absolute;
+    float: left;
+    margin-left: 10rem;
+    margin-top: 7rem;
+}
+
+.stage-btn2 {
+    width: 140px;
+    height: 115px;
+    position: absolute;
+    float: left;
+    margin-left: 10rem;
+    margin-top: 18rem;
+}
+
+.stage-btn3 {
+    width: 140px;
+    height: 115px;
+    position: absolute;
+    float: left;
+    margin-left: 10rem;
+    margin-top: 29rem;
+}    
+
 /* --- Modal styling --- */
 .overlay {
 	position: fixed;
