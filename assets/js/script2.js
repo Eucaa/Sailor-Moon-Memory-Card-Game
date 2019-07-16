@@ -179,13 +179,13 @@ var interval = setInterval(function() {
 }
 
 function congrats() {
-    if (grid.length === 16){
+    if (grid.length == 16){
         clearInterval(interval);
         finalTime = counter.innerHTML;
 
         // show congratulations modal
         modal.classList.add("show");
-        ;
+        
 
         document.getElementById("finalMove").innerHTML = moveCounter;
         document.getElementById("totalTime").innerHTML = finalTime;
@@ -201,7 +201,7 @@ congrats();
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
         startGame();
-        
+        playAgain();
     });
 }
 
