@@ -27,6 +27,8 @@ html {
 body {
   margin: 20px 0;
   background: transparent;
+  /* background-image: url('https://media.giphy.com/media/NzSUEgbTWB7TW/giphy.gif');
+  z-index: 1; */ 
 }
 
 h1 {
@@ -114,8 +116,16 @@ h1 {
 .score-panel {
     text-align: center;
     margin: 1em;
+    font-family: 'Oswald', sans-serif;
 }
 
+.move {
+    padding-right: 1rem;
+}
+
+.timer {
+      padding-right: 1rem;
+}
 
 /* --- Stage buttons --- */
 
@@ -172,31 +182,13 @@ h1 {
   width: 23rem;
 }
 
-/* --- Additional Styling --- */
-
-.help-btn {
-    width: 75px;
-    height: 100px;
-    position: relative;
-    float: right;
-    margin: 20px;
+.btn { 
+  text-decoration:none;
 }
 
-.disclaimer {
-  text-align: center;
-}
-
-.stage-swap {
-  display:block;
-  width: 10rem;
-  border-style: none;
-}
-
-.stage-btn {
-  margin-bottom:5px;
-  display:block;
-  border-style: none;
-  width: 100%;
+a {
+  color: #813898;
+  font-family: 'Oswald', sans-serif;
 }
 
 /* --- Modal styling --- */
@@ -225,13 +217,13 @@ h1 {
 	width: 85%;
 	position: relative;
 	transition: all 5s ease-in-out;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Oswald', cursive;
 }
   
 .popup, h2 {
 	margin-top: 0;
 	color: #333;
-	font-family: Tahoma, Arial, sans-serif;
+	font-family: 'Oswald', sans-serif;
 }
 
 .popup .close {
@@ -272,3 +264,29 @@ h1 {
 	border-radius: 5px;
 }
 
+/* --- Additional Styling --- */
+
+.help-btn {
+    width: 75px;
+    height: 100px;
+    position: relative;
+    float: right;
+    margin: 20px;
+}
+
+.disclaimer {
+  text-align: center;
+}
+
+.stage-swap {
+  display:block;
+  width: 10rem;
+  border-style: none;
+}
+
+.stage-btn {
+  margin-bottom:5px;
+  display:block;
+  border-style: none;
+  width: 100%;
+}

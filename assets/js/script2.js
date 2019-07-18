@@ -46,7 +46,7 @@ let secondGuess = '';
 let count = 0;
 let previousTarget = 0;
 let delay = 1000;
-let counter = 500;
+let counter = 1000;
 let moveCounter = 0;
 let closeicon = document.querySelector(".close");
 let modal = document.getElementById("popup1");
@@ -58,7 +58,7 @@ var resetAll = function (){
     secondGuess = '';
     count = 0;
     previousTarget = 0;
-    counter = 500;
+    counter = 1000;
     moveCounter = 0;
   	$("#moves").html("" + moveCounter);
 };
@@ -172,7 +172,7 @@ var interval = setInterval(function() {
      		finalTime = counter.innerHTML;
 
         // show congrats modal
-        $('#popup1').modal('show', 'popup');
+        $('#popup1').modal('show');
         
         // the congrats model (popup1) must be called upon oonce the timer has reached it's 0-point and show the requested results.
 
@@ -186,11 +186,13 @@ var interval = setInterval(function() {
     	$('#time').text(counter);
       console.log("Timer --> " + counter);
     }
+    closeModal();
+    
 }, 1000);
 
 }
 
-function congrats() {
+/* function congrats() {
     if (grid.length == 16){
         clearInterval(interval);
         
@@ -209,9 +211,9 @@ function congrats() {
     	$('#moves').text(moveCounter);
       console.log("Timer --> " + moveCounter);
     }
-}
+} */
         //closeicon on modal
-        closeModal();
+        
 
 
  function closeModal(){
@@ -222,7 +224,7 @@ function congrats() {
     });
 }
 
-congrats();
+//congrats();
 
 function playAgain(){
     // modal.classList.remove("show");
@@ -230,6 +232,7 @@ function playAgain(){
     startGame();
 }
 
+ modal.addEventListener('click', playAgain);
 
 // Modal on page load (start-modal)
 $(window).ready(function(){        
