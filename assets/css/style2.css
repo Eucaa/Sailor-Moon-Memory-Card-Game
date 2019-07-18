@@ -113,7 +113,63 @@ h1 {
 /* --- Score Panel --- */
 .score-panel {
     text-align: center;
-    margin: 2em;
+    margin: 1em;
+}
+
+
+/* --- Stage buttons --- */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #e8c0e400;
+  color: transparent;
+  font-size: 40px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.container .btn:hover {
+    background-color: transparent;
+}
+    
+.btn-click-size {
+  cursor: pointer;
+    height: 7rem;
+    width: 5rem;
+}
+
+.btn-group {
+  width: 23rem;
 }
 
 /* --- Additional Styling --- */
@@ -130,32 +186,18 @@ h1 {
   text-align: center;
 }
 
-.stage-btn1 {
-    width: 140px;
-    height: 115px;
-    position: absolute;
-    float: left;
-    margin-left: 10rem;
-    margin-top: 7rem;
+.stage-swap {
+  display:block;
+  width: 10rem;
+  border-style: none;
 }
 
-.stage-btn2 {
-    width: 140px;
-    height: 115px;
-    position: absolute;
-    float: left;
-    margin-left: 10rem;
-    margin-top: 18rem;
+.stage-btn {
+  margin-bottom:5px;
+  display:block;
+  border-style: none;
+  width: 100%;
 }
-
-.stage-btn3 {
-    width: 140px;
-    height: 115px;
-    position: absolute;
-    float: left;
-    margin-left: 10rem;
-    margin-top: 29rem;
-}    
 
 /* --- Modal styling --- */
 .overlay {
@@ -212,6 +254,10 @@ h1 {
 	max-height: 30%;
 	overflow: auto;
 	text-align: center;
+}
+
+.show {
+	visibility: visible !important;
 }
 
 #play-again {

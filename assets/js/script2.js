@@ -46,7 +46,7 @@ let secondGuess = '';
 let count = 0;
 let previousTarget = 0;
 let delay = 1000;
-let counter = 60;
+let counter = 500;
 let moveCounter = 0;
 let closeicon = document.querySelector(".close");
 let modal = document.getElementById("popup1");
@@ -58,9 +58,9 @@ var resetAll = function (){
     secondGuess = '';
     count = 0;
     previousTarget = 0;
-    counter = 60;
+    counter = 500;
     moveCounter = 0;
-  	$(".moves").html("" + moveCounter);
+  	$("#moves").html("" + moveCounter);
 };
 
 document.getElementById("reset-btn").addEventListener("click", resetAll);
@@ -159,7 +159,7 @@ grid.addEventListener('click', function(event) {
     previousTarget = clicked;
   }
    moveCounter++;
-		$(".moves").html("" + moveCounter);
+		$("#moves").html("" + moveCounter);
 });
 
 // Count-down (storing on line:49 / reset on line: 58)
@@ -168,7 +168,19 @@ var interval = setInterval(function() {
     // Display 'counter' wherever you want to.
     if (counter <= -1) {
      		clearInterval(interval);
-      	$('#timer').html("<h3>Retry</h3>");  
+     		
+     		finalTime = counter.innerHTML;
+
+        // show congrats modal
+        $('#popup1').modal('show', 'popup');
+        
+        // the congrats model (popup1) must be called upon oonce the timer has reached it's 0-point and show the requested results.
+
+        document.getElementById("finalMove").innerHTML = moveCounter;
+        document.getElementById("totalTime").innerHTML = finalTime;
+        
+     		
+      	$('.timer').html("<h3>Retry</h3>");  
         return;
     }else{
     	$('#time').text(counter);
@@ -181,34 +193,43 @@ var interval = setInterval(function() {
 function congrats() {
     if (grid.length == 16){
         clearInterval(interval);
-        finalTime = counter.innerHTML;
+        
+        finalTime = moveCounter.innerHTML;
 
         // show congratulations modal
-        modal.classList.add("show");
+        $('#popup1').modal('show', '.content-2');
         
 
         document.getElementById("finalMove").innerHTML = moveCounter;
         document.getElementById("totalTime").innerHTML = finalTime;
-        
-        
-        //closeicon on modal
-        closeModal();
+     		
+      	$('.move').html("<h3>Retry</h3>");  
+        return;
+    }else{
+    	$('#moves').text(moveCounter);
+      console.log("Timer --> " + moveCounter);
     }
 }
-congrats();
+        //closeicon on modal
+        closeModal();
+
 
  function closeModal(){
     closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
+       // modal.classList.remove("show");
+       $('#popup1').modal('show');
         startGame();
-        playAgain();
     });
 }
 
+congrats();
+
 function playAgain(){
-    modal.classList.remove("show");
+    // modal.classList.remove("show");
+    $('#popup1').modal('show');
     startGame();
 }
+
 
 // Modal on page load (start-modal)
 $(window).ready(function(){        

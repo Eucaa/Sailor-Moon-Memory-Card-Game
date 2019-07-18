@@ -47,8 +47,9 @@
         </div>
 
     <div class="score-panel">
-    
-        <span class="moves">0</span> Moves
+        <span class="move">
+        <span id="moves">0</span> Moves
+        </span>
         <span class="timer">
             <span id="time">60</span> seconds left
         </span>
@@ -58,29 +59,37 @@
         </span>
     </div>
     
-    
-    <div id="game">
-        <div class= "stage-swap">
-        <button>   
-        <img class="stage-btn1" src="assets/images/stage-btn.png"></img>
-        </button> 
-        <button>
-        <img class="stage-btn2" src="assets/images/stage-btn.png"></img>
-        </button>
-        <button>
-        <img class="stage-btn3" src="assets/images/stage-btn.png"></img>
-        </button>
+    <nav class="col text-center">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="container">
+        <a href="assets/index2.html">   
+        <img src="assets/images/stage-btn.png" alt="stage one"></img>     
+        <button type="button" class="btn btn-secondary btn-click-size">One</button>
+        <h6>Stage One</h6> 
+        </a> 
         </div>
-    </div>
+        <div class="container">
+        <img src="assets/images/stage-btn.png" alt="stage two"></img>     
+        <button type="button" class="btn btn-secondary btn-click-size">Two</button>
+        <h6>Stage Two</h6>
+        </div>
+        <div class="container">
+        <img src="assets/images/stage-btn.png" alt="stage three"></img>     
+        <button type="button" class="btn btn-secondary btn-click-size">Three</button>
+        <h6>Stage Three</h6>
+        </div>
+      </div>            
+    </nav>
     
+    <section id="game">
+    </section>
     
-    </div>
     
     
     <div id="popup1" class="overlay">   <!-- NEW -->
             <div class="popup">
                 <h2>Congratulations!</h2>
-                <a class="close" href=# >×</a>
+                <a class="close" href=# >x</a>
                 <div class="content-1">
                     Congratulations you're a winner!
                 </div>
@@ -98,8 +107,8 @@
 		<p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
 	</footer>
     
-   
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="assets/js/script2.js"></script>
