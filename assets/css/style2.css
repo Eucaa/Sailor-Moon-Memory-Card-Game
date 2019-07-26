@@ -38,6 +38,7 @@ h1 {
     font-size: 3em;
     text-transform: full-width;
     padding-top: 20px;
+    color: #fff0fa;
 }
 
 .grid {
@@ -118,6 +119,7 @@ h1 {
     text-align: center;
     margin: 1em;
     font-family: 'Oswald', sans-serif;
+    color: #fff0fa;
 }
 
 .move {
@@ -210,6 +212,9 @@ a {
 .disclaimer {
   text-align: center;
   margin: 0;
+  color: #38373a;
+  opacity: 0.7;
+  font-size: small;
 }
 
 .stage-swap {

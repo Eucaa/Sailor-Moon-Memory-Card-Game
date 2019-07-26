@@ -61,6 +61,7 @@ var resetAll = function (){
     counter = 61;
     moveCounter = 0;
   	$("#moves").html("" + moveCounter);
+  	cardList.remove("#game");
 };
 
 document.getElementById("reset-btn").addEventListener("click", resetAll);
