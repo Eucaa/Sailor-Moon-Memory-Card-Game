@@ -235,6 +235,8 @@ p {
     margin-bottom: 1rem;
 }
 
+.stage-color {
+  color: #825379;
 /* --- Fog overlay styling --- 
 
 .fog : html {

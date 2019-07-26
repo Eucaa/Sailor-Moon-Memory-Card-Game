@@ -35,10 +35,10 @@ var cardList = [
 ];
 
 // Duplicate array to create a match for each card
-let gameGrid = cardList.concat(cardList);
+let gameTile = cardList.concat(cardList);
 
 // Randomize game grid on each load
-gameGrid.sort(() => 0.5 - Math.random());
+gameTile.sort(() => 0.5 - Math.random());
 
 // Storing the count and guess (to test if two selected cards match)
 let firstGuess = '';
@@ -84,7 +84,7 @@ function startGame(){
 // Changed to double-up cardList amount:
 
 // For each item in the gameGrid array...    
-gameGrid.forEach(item => {    
+gameTile.forEach(item => {    
   // Create a div
   const card = document.createElement('div');
   // Apply a card class to that div
@@ -92,9 +92,11 @@ gameGrid.forEach(item => {
   // Set the data-name attribute of the div to the cardList name
   card.dataset.name = item.name;
   
+  // Add functionality and styling to "front"
   const front = document.createElement('div');
   front.classList.add('front');
   
+  // Add functionality and styling to "back"
   const back = document.createElement('div');
   back.classList.add('back');
   // Apply the background image of the div to the cardList image
