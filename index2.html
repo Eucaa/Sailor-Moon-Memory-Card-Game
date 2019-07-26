@@ -27,12 +27,20 @@
         <p>Some text in the modal.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Start Game</button>
+        <button type="button" id="startUp" class="btn btn-default" data-dismiss="modal">Start Game</button>
       </div>
     </div>
 
   </div>
 </div>
+
+
+ <!-- <div class="fog">
+    <div class="fog-container">
+      <div class="fog-img fog-img-first"></div>
+      <div class="fog-img fog-img-second"></div>
+    </div>
+  </div> -->
     
     
         <!--<div class="row">
@@ -46,9 +54,8 @@
         <span id="moves">0</span> Moves
         </span>
         <span class="timer">
-            <span id="time">60</span> seconds left
+            <span id="time">0</span> seconds left
         </span>
-        
         <span class="buttonReset">
          <button id="reset-btn">Reset</button>
         </span>
@@ -83,9 +90,51 @@
     <section id="game">
     </section>
     
+<div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">congrats-modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="content-1">
+                    <p>You made <span id=finalMove> </span> moves </p>
+                    <p>in <span id=totalTime> </span> </p>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     
+<div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">timesUp-modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="content-2">
+                    <p>You made <span id=finalMove> </span> moves </p>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="startAgain" class="btn btn-secondary" data-dismiss="modal">Try Again</button>
+      </div>
+    </div>
+  </div>
+</div>    
+
     
-    <div id="popup1" class="overlay">   <!-- NEW -->
+    <!--<div id="popup1" class="overlay">
             <div class="popup">
                 <h2>Congratulations!</h2>
                 <a class="close" href=# >x</a>
@@ -100,7 +149,7 @@
                     Play again</a>
                 </button>
             </div>
-        </div>  <!-- END NEW -->
+        </div>-->
     
     <footer>
 		<p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
