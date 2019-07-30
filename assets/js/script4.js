@@ -32,19 +32,51 @@ var cardList = [
     name: 'venus',    
     img: "assets/images/venus.jpg",
     },
+    {
+    name: 'jupiter',    
+    img: "assets/images/jupiter.png",
+    },
+    {
+    name: 'luna',    
+    img: "assets/images/luna.jpg",
+    },
+    {
+    name: 'mars',
+    img: "assets/images/mars.jpg"
+    },
+    {
+    name: 'mercury',    
+    img: "assets/images/mercury.jpg",
+    },
+    {
+    name: 'moon',    
+    img: "assets/images/moon.jpg",
+    },
+    {
+    name: 'neptune',    
+    img: "assets/images/neptune.jpg",
+    },
+    {
+    name: 'uranus',    
+    img: "assets/images/uranus.jpg",
+    },
+    {
+    name: 'venus',    
+    img: "assets/images/venus.jpg",
+    }, 
 ];
 
-// Duplicate array to create a match for each card
-let gameTile = cardList.concat(cardList);
+// const grid = document.querySelector("game");
 
 // Randomize game grid on each load
-gameTile.sort(() => 0.5 - Math.random());
+cardList.sort(() => 0.5 - Math.random());
+
 
 // Storing the count and guess (to test if two selected cards match)
-let firstGuess = '';
-let secondGuess = '';
+let firstTry = '';
+let secondTry = '';
 let count = 0;
-let previousTarget = 0;
+//let previousTarget = 0;
 let delay = 1000;
 let counter = 61;
 let moveCounter = 0;
@@ -54,10 +86,10 @@ let moveCounter = 0;
 
 var resetAll = function (){
   console.log("resetButtonClicked");
-    firstGuess = '';
-    secondGuess = '';
+    firstTry = '';
+    secondTry = '';
     count = 0;
-    previousTarget = 0;
+   //previousTarget = 0;
     counter = 61;
     moveCounter = 0;
   	$("#moves").html("" + moveCounter);
@@ -70,20 +102,18 @@ const game = document.getElementById('game');
 // Create a section with a class of tiles
 const tiles = document.createElement('section');
 tiles.setAttribute('class', 'tiles');
-// Append the tiles section to the game div
+// Attach the tiles section to the game div
 game.appendChild(tiles);
 
 // Game load in body
 document.body.onload = startGame();
 
-function startGame(){
+
 
 // For each item in the cardList array...
 // cardList.forEach(item => {
-// Changed to double-up cardList amount:
-
-// For each item in the gameGrid array...    
-gameTile.forEach(item => {    
+  
+cardList.forEach(item => {    
   // Create a div
   const card = document.createElement('div');
   // Apply a card class to that div
@@ -110,16 +140,20 @@ gameTile.forEach(item => {
 
 // Loop through all selected elements when called, then add the match class.
 const match = () => {
-  let selected = document.querySelectorAll('.selected');
-  selected.forEach(card => {
-    card.classList.add('match');
-
-  });
+  let cards = [...cardList];
+  for (var i = 0; i < cards.length; i++){
+   cards[i].addEventListener("click", displayCard); // Add block function for displayCard
+}
 };
+
+
+function startGame(){
+
+ 
 // This will reset all counts and guesses back to their original values...
-const resetGuesses = () => {
-  firstGuess = '';
-  secondGuess = '';
+const resetTry = () => {
+  firstTry = '';
+  secondTry = '';
   count = 0;
 // ... and removes the CSS of class 'selected'.
   var selected = document.querySelectorAll('.selected');
@@ -141,32 +175,32 @@ tiles.addEventListener('click', function(event) {
   if (count < 2) {
     count++;
     if (count === 1) {  // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
-      firstGuess = clicked.parentNode.dataset.name;
-      console.log(firstGuess);
+      firstTry = clicked.parentNode.dataset.name;
+      console.log(firstTry);
       clicked.parentNode.classList.add('selected');
     } else {
-      secondGuess = clicked.parentNode.dataset.name;
-      console.log(secondGuess);
+      secondTry = clicked.parentNode.dataset.name;
+      console.log(secondTry);
       clicked.parentNode.classList.add('selected');
     }
-    if (firstGuess !== '' && secondGuess !== '') { // If firstGuess and secondGuess do not share equal value or type... 
-      if (firstGuess === secondGuess) {  // The match checker, on success or fail
+    if (firstTry !== '' && secondTry !== '') { // If firstTry and secondGuess do not share equal value or type... 
+      if (firstTry === secondTry) {  // The match checker, on success or fail
         setTimeout(match, delay);
-        setTimeout(resetGuesses, delay);
-        disable(); //NEW, (but doens't work) check line 164
+        setTimeout(resetTry, delay);
+       
       } else {
-        setTimeout(resetGuesses, delay); // ... Reset the cards.
+        setTimeout(resetTry, delay); // ... Reset the cards.
       }
     }
-   // previousTarget = clicked;
+    // previousTarget = clicked;
   }
   
-   function disable(){
+   /* function disable(){
     // call upon the objects in the array of cardList and disable the cards from performing the selected css-rotation (.selected)
     Array.prototype.filter.call(cardList), function(card){
         card.classList.disabled('selected');
     };
-}
+} */
   
    moveCounter++;
 		$("#moves").html("" + moveCounter);
@@ -177,7 +211,7 @@ tiles.addEventListener('click', function(event) {
 // Count-down (storing on line:49 / reset on line: 58)
 var interval = setInterval(function() {
     counter--;
-    // Display 'counter' wherever you want to.
+    // Display 'counter'
     if (counter <= -1) {
      		clearInterval(interval);
      		
@@ -192,14 +226,11 @@ var interval = setInterval(function() {
       //$('.timer').html("");  
        //return;
         
-    }else{
-    	$('#time').text(counter);
-      console.log("Timer --> " + counter);
     }
     
 }, 1000);
 
-}
+
 
 // congrats-modal
  function congrats() {
@@ -222,6 +253,7 @@ var interval = setInterval(function() {
       console.log("Timer --> " + moveCounter);
     }
 } 
+}
         //closeicon on modal
         
  /*function closeModal(){
