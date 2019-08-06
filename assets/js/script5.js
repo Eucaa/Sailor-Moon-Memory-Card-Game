@@ -88,9 +88,6 @@ cardList.sort(() => 0.5 - Math.random());
 // Storing the count and guess (to test if two selected cards match)
 let firstTry = '';
 let secondTry = '';
-let count = 0;
-//let previousTarget = 0;
-let delay = 1000;
 let originalCounter = 60;
 let counter = originalCounter;
 let moveCounter = 0;
@@ -100,7 +97,6 @@ var resetAll = function() {
     console.log("resetButtonClicked");
     firstTry = '';
     secondTry = '';
-    count = 0;
     counter = 60;
     moveCounter = 0;
     $("#moves").html("" + moveCounter);
@@ -148,8 +144,8 @@ cardList.forEach((item, index, arr) => {
     card.addEventListener('click', function(event) {
         console.log("clicked on card: "+ index);
         let clicked = event.target;
-        let count = $(".selected").length
-        console.log("sum of total selected items = "+ count)
+        let count = $(".selected").length;
+        console.log("sum of total selected items = "+ count);
         if (count < 2) {
             count++;
             if (count === 1) { // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
@@ -175,7 +171,7 @@ cardList.forEach((item, index, arr) => {
                     
                 }
                 
-                let correctCount = $(".match").length
+                let correctCount = $(".match").length;
                 if(correctCount === cardList.length) {
                     $('#congrats-modal').modal('show');
                     document.getElementById("finalMove").innerHTML = moveCounter;
