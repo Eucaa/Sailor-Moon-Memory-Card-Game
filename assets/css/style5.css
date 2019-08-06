@@ -224,6 +224,12 @@ a {
   color: white;
 }
 
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #20547b;
+    border-color: #20547b;
+}
+
 .content-1 {
     color: #2c7abf;
     font-size: large;
