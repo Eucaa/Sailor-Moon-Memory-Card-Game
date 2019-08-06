@@ -142,7 +142,7 @@ cardList.forEach(item => {
 const match = () => {
   let cards = [...cardList];
   for (var i = 0; i < cards.length; i++){
-   cards[i].addEventListener("click", displayCard); // Add block function for displayCard
+   cards[i].addEventListener("click", cardDisplay); // Add block function for cardDisplay
 }
 };
 
@@ -211,7 +211,7 @@ tiles.addEventListener('click', function(event) {
 // Count-down (storing on line:49 / reset on line: 58)
 var interval = setInterval(function() {
     counter--;
-    // Display 'counter'
+    // Display 'counter' wherever you want to.
     if (counter <= -1) {
      		clearInterval(interval);
      		
@@ -226,6 +226,9 @@ var interval = setInterval(function() {
       //$('.timer').html("");  
        //return;
         
+    } else{
+    	$('#time').text(counter);
+      console.log("Timer --> " + counter);
     }
     
 }, 1000);
