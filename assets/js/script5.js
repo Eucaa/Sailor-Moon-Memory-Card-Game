@@ -40,6 +40,16 @@ var cardList = [{
         
     },
     {
+        name: 'artemis',
+        img: "assets/images/artemis.png"
+        
+    },
+    {
+        name: 'tuxedomask',
+        img: "assets/images/tuxedomask.jpg"
+        
+    },
+    {
         name: 'jupiter',
         img: "assets/images/jupiter.png",
         
@@ -77,6 +87,16 @@ var cardList = [{
     {
         name: 'venus',
         img: "assets/images/venus.jpg"
+        
+    },
+    {
+        name: 'artemis',
+        img: "assets/images/artemis.png"
+        
+    },
+    {
+        name: 'tuxedomask',
+        img: "assets/images/tuxedomask.jpg"
         
     },
 ];

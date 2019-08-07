@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sailor Moon TEST5</title>
+    <title>Sailor Moon TEST4</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
@@ -23,10 +23,12 @@
       </div>
       <div class="modal-body">
         <img class="help-img" src="assets/images/help-btn.png"></img>  
-        <p class="oswald">Some text in the modal.</p>
+        <h6 class="oswald">Try to match two cards of the same character before the timer runs out! </h6> <br>
+        <p class="oswald">* Two cards turned counts as one move. <br>
+        * Turning and already matched card will cost you an extra move, so be careful!</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="startUp" class="btn btn-default btn-color1 oswald" data-dismiss="modal">Start Game</button>
+        <button type="button" id="startUp" class="btn btn-secondary btn-color1 oswald" data-dismiss="modal">Start Game</button>
       </div>
     </div>
 
@@ -48,23 +50,23 @@
     <nav class="col text-center">
       <div class="btn-group" role="group" aria-label="Basic example">
         <div class="container">
-        <a href="#" style="text-decoration:none;">   
+        <a href="index3.html" style="text-decoration:none;">   
         <img src="assets/images/stage-btn.png" alt="stage one"></img>     
-        <button type="button" class="btn btn-secondary btn-click-size">One</button>
+        <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage One</h6> 
         </a> 
         </div>
         <div class="container">
         <a href="#" style="text-decoration:none;">
         <img src="assets/images/stage-btn.png" alt="stage two"></img>     
-        <button type="button" class="btn btn-secondary btn-click-size">Two</button>
+        <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage Two</h6>
         </a>
         </div>
         <div class="container">
         <a href="#" style="text-decoration:none;">
         <img src="assets/images/stage-btn.png" alt="stage three"></img>     
-        <button type="button" class="btn btn-secondary btn-click-size">Three</button>
+        <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage Three</h6>
         </a>
         </div>
@@ -99,9 +101,9 @@
     
 <div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content modal-color2">
       <div class="modal-header">
-        <h5 class="modal-title modal-title-size" id="exampleModalLabel oswald">Time's up!</h5>
+        <h5 class="modal-title modal-title-size oswald" id="exampleModalLabel">Time's up!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

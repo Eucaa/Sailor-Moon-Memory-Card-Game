@@ -25,16 +25,6 @@ var cardList = [{
         
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
-        
-    },
-    {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
-        
-    },
-    {
         name: 'venus',
         img: "assets/images/venus.jpg"
         
@@ -65,16 +55,6 @@ var cardList = [{
         
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
-        
-    },
-    {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
-        
-    },
-    {
         name: 'venus',
         img: "assets/images/venus.jpg"
         
@@ -88,7 +68,7 @@ cardList.sort(() => 0.5 - Math.random());
 // Storing the count and guess (to test if two selected cards match)
 let firstTry = '';
 let secondTry = '';
-let originalCounter = 60;
+let originalCounter = 50;
 let counter = originalCounter;
 let moveCounter = 0;
 
@@ -97,7 +77,7 @@ var resetAll = function() {
     console.log("resetButtonClicked");
     firstTry = '';
     secondTry = '';
-    counter = 60;
+    counter = 50;
     moveCounter = 0;
     $("#moves").html("" + moveCounter);
 };

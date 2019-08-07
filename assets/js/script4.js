@@ -88,7 +88,7 @@ cardList.sort(() => 0.5 - Math.random());
 // Storing the count and guess (to test if two selected cards match)
 let firstTry = '';
 let secondTry = '';
-let originalCounter = 60;
+let originalCounter = 55;
 let counter = originalCounter;
 let moveCounter = 0;
 
@@ -97,7 +97,7 @@ var resetAll = function() {
     console.log("resetButtonClicked");
     firstTry = '';
     secondTry = '';
-    counter = 60;
+    counter = 55;
     moveCounter = 0;
     $("#moves").html("" + moveCounter);
 };
