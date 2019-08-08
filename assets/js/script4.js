@@ -190,8 +190,13 @@ cardList.forEach((item, index, arr) => {
             
         }
         
-        
-
+/* function flipLock () {
+    if (firstTry === secondTry) {
+    $('.card').filter($('.match'));
+    cardList = [];
+    moveCounter=moveCounter+1;
+    }        
+} */
         
         $("#moves").html("" + moveCounter);
     });

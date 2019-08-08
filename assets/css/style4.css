@@ -269,8 +269,8 @@ a {
     margin: 20px;
 }
 
-.congrats-img {
-    width: 175px;
+.congrats-img2 {
+    width: 150px;
     height: 135px;
     position: relative;
     float: right;
@@ -306,5 +306,20 @@ p {
 .stage-color {
   color: #5f3a58;
 }  
+
+@media (max-width: 770px) {
+  
+  tiles {
+		width: 50%;
+	}
+
+	.card .front .back {
+		height: 2rem;
+		width: 2rem;
+	}
+  
+}
+	
+
 
   
