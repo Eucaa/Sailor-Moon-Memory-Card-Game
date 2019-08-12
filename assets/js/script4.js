@@ -244,3 +244,22 @@ $(document).ready(function() {
         location.reload(true);
     });
 });
+
+
+var tunePlay=false;
+$("audio")[0].play(); 
+
+$('#tune-btn').click(function(){
+    
+    var $this = $(this);
+  if(tunePlay)
+    {
+      tunePlay=false;
+      $this.text('play sounds'); 
+      
+      }else{
+        tunePlay=true;
+      $this.text('Sound Muted'); 
+        }
+              
+});

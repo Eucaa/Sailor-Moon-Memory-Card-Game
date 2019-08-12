@@ -28,6 +28,9 @@ body {
   margin: 0;
   background: transparent;
   background-image: url('https://i.gifer.com/2iiB.gif');
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
   z-index: 1;
 }
 
@@ -307,4 +310,8 @@ p {
   color: #5f3a58;
 }  
 
-  
+.tune-btn-style {
+  height: 25px;
+  width: auto;
+  font-size: small;
+}  
