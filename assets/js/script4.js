@@ -2,82 +2,82 @@
 var cardList = [{
         name: 'jupiter',
         img: "assets/images/jupiter.png",
-        
+
     },
     {
         name: 'luna',
         img: "assets/images/luna.jpg"
-        
+
     },
     {
         name: 'mars',
         img: "assets/images/mars.jpg"
-        
+
     },
     {
         name: 'mercury',
         img: "assets/images/mercury.jpg"
-        
+
     },
     {
         name: 'moon',
         img: "assets/images/moon.jpg"
-        
+
     },
     {
         name: 'neptune',
         img: "assets/images/neptune.jpg"
-        
+
     },
     {
         name: 'uranus',
         img: "assets/images/uranus.jpg"
-        
+
     },
     {
         name: 'venus',
         img: "assets/images/venus.jpg"
-        
+
     },
     {
         name: 'jupiter',
         img: "assets/images/jupiter.png",
-        
+
     },
     {
         name: 'luna',
         img: "assets/images/luna.jpg"
-        
+
     },
     {
         name: 'mars',
         img: "assets/images/mars.jpg"
-        
+
     },
     {
         name: 'mercury',
         img: "assets/images/mercury.jpg"
-        
+
     },
     {
         name: 'moon',
         img: "assets/images/moon.jpg"
-        
+
     },
     {
         name: 'neptune',
         img: "assets/images/neptune.jpg"
-        
+
     },
     {
         name: 'uranus',
         img: "assets/images/uranus.jpg"
-        
+
     },
     {
         name: 'venus',
         img: "assets/images/venus.jpg"
-        
+
     },
 ];
 
@@ -142,43 +142,44 @@ cardList.forEach((item, index, arr) => {
     card.appendChild(front);
     card.appendChild(back);
     card.addEventListener('click', function(event) {
-        console.log("clicked on card: "+ index);
+        console.log("clicked on card: " + index);
         let clicked = event.target;
         let count = $(".selected").length;
-        console.log("sum of total selected items = "+ count);
+        console.log("sum of total selected items = " + count);
         if (count < 2) {
             count++;
             if (count === 1) { // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
                 firstTry = clicked.parentNode.dataset.name;
                 console.log(firstTry);
-            } else if (count === 2) {
+            }
+            else if (count === 2) {
                 secondTry = clicked.parentNode.dataset.name;
                 console.log(secondTry);
             }
-             clicked.parentNode.classList.add('selected');
-        } 
-        if(count == 2) {
+            clicked.parentNode.classList.add('selected');
+        }
+        if (count == 2) {
             moveCounter++;
             let waiter = setTimeout(function() {
                 if (firstTry !== '' && secondTry !== '') { // If firstTry and secondGuess do not share equal value or type... 
                     if (firstTry === secondTry) { // The match checker, on success or fail
                         console.log("we found a match");
                         let items = $(".selected");
-                        for(let i = 0; i < items.length; i++) {
+                        for (let i = 0; i < items.length; i++) {
                             items[i].classList.add('match');
                         }
                     }
-                    
+
                 }
-                
+
                 let correctCount = $(".match").length;
-                if(correctCount === cardList.length) {
+                if (correctCount === cardList.length) {
                     $('#congrats-modal').modal('show');
                     document.getElementById("finalMove").innerHTML = moveCounter;
                     document.getElementById("totalTime").innerHTML = originalCounter - counter;
                     $('#timesUp-modal').remove();
                 }
-                
+
                 count = 0;
                 firstTry = '';
                 secondTry = '';
@@ -187,17 +188,17 @@ cardList.forEach((item, index, arr) => {
                     card.classList.remove('selected');
                 });
             }, 1000);
-            
+
         }
-        
-/* function flipLock () {
-    if (firstTry === secondTry) {
-    $('.card').filter($('.match'));
-    cardList = [];
-    moveCounter=moveCounter+1;
-    }        
-} */
-        
+
+        /* function flipLock () {
+            if (firstTry === secondTry) {
+            $('.card').filter($('.match'));
+            cardList = [];
+            moveCounter=moveCounter+1;
+            }        
+        } */
+
         $("#moves").html("" + moveCounter);
     });
 });
@@ -219,14 +220,13 @@ function startGame() {
             console.log(moveCounter);
             $("#moveCounter").text(moveCounter);
 
-        } else {
+        }
+        else {
             $('#time').text(counter);
             console.log("Timer --> " + counter);
         }
 
     }, 1000);
-
-
 
 }
 
@@ -246,20 +246,23 @@ $(document).ready(function() {
 });
 
 
-var tunePlay=false;
-$("audio")[0].play(); 
+var tunePlay = false;
+$("audio")[0].play();
 
-$('#tune-btn').click(function(){
-    
+$('#tune-btn').click(function() {
+
     var $this = $(this);
-  if(tunePlay)
-    {
-      tunePlay=false;
-      $this.text('play sounds'); 
-      
-      }else{
-        tunePlay=true;
-      $this.text('Sound Muted'); 
-        }
-              
+    if (tunePlay) {
+        tunePlay = false;
+        $this.text("Play Sound");
+    }
+    else {
+        tunePlay = true;
+        $this.text("Sound Muted");
+    }
 });
+
+var setMute = tunePlay;
+localStorage.setItem("audio", setMute);
+var mute = localStorage.getItem("audio");
+

@@ -25,13 +25,13 @@ var cardList = [{
         
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
+        name: 'chibiusa',
+        img: "assets/images/chibiusa.jpg"
         
     },
     {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
+        name: 'serenity',
+        img: "assets/images/serenity.jpg"
         
     },
     {
@@ -75,13 +75,13 @@ var cardList = [{
         
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
+        name: 'chibiusa',
+        img: "assets/images/chibiusa.jpg"
         
     },
     {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
+        name: 'serenity',
+        img: "assets/images/serenity.jpg"
         
     },
     {
