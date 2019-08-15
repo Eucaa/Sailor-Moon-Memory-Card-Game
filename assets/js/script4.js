@@ -245,24 +245,51 @@ $(document).ready(function() {
     });
 });
 
+// var tunePlay = false;
 
-var tunePlay = false;
-$("audio")[0].play();
+backgroundMusic = new Audio();
+backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
+backgroundMusic.volume = 0.5;
+backgroundMusic.play();
+backgroundMusic.loop = true;
 
 $('#tune-btn').click(function() {
-
-    var $this = $(this);
-    if (tunePlay) {
-        tunePlay = false;
-        $this.text("Play Sound");
-    }
-    else {
-        tunePlay = true;
-        $this.text("Sound Muted");
+    
+    let backgroundMusic = localStorage.getItem("mute_music");
+    
+    if (backgroundMusic === 'true') {
+        
+        localStorage.setItem("mute_music",'false');
+    } else { 
+        localStorage.setItem("mute_music",'true');
     }
 });
 
-var setMute = tunePlay;
-localStorage.setItem("audio", setMute);
-var mute = localStorage.getItem("audio");
-
+$(document).ready(function() {
+    var tunePlay = false;
+    let backgroundMusic = localStorage.getItem ("mute_music");
+    if (backgroundMusic === 'true') {
+       tunePlay.pause();
+    } else {
+       tunePlay.play();
+    }
+    
+});
+    
+/*
+    var tunePlay = localStorage.getItem('tunePlay');
+    if (!tunePlay || tunePlay !== 'true') {
+        tunePlay = false;
+        backgroundMusic.pause();
+        tunePlay.text("Play Sound");
+    }
+    else {
+        tunePlay = true;
+        backgroundMusic.play();
+        tunePlay.text("Sound Mute");
+    }
+    localStorage.setItem('tunePlay', String(backgroundMusic));
+    
+    document.getElementById("tune-btn").style.fontFamily = "Oswald,sans-serif";
+});
+*/ 
