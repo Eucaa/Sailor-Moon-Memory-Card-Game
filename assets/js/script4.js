@@ -239,57 +239,52 @@ $(window).ready(function() {
 
 document.getElementById("startUp").addEventListener("click", resetAll);
 
+backgroundMusic = new Audio();
+backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
+backgroundMusic.volume = 0.5;
+backgroundMusic.loop = true;
+
+//Als je naar de website toegaat
 $(document).ready(function() {
     $(".startAgain").click(function() {
         location.reload(true);
     });
+    
+    let isMusicMuted = localStorage.getItem ("mute_music");
+    
+    if(isMusicMuted == undefined) {
+        localStorage.setItem("mute_music",'false');
+        $('#toggleMute').text('Disable Sound');
+        backgroundMusic.play();
+    } 
+    else if (isMusicMuted === 'false') {
+       backgroundMusic.play();
+       $('#toggleMute').text('Disable Sound');
+    }
+    else if(isMusicMuted === 'true') {
+        $('#toggleMute').text('Enable Sound');
+    } else {
+        localStorage.setItem("mute_music",'false');
+        $('#toggleMute').text('Disable Sound');
+        backgroundMusic.play();
+    }
+    document.getElementById("tune-btn").style.fontFamily = "Oswald,sans-serif";
 });
 
-// var tunePlay = false;
-
-backgroundMusic = new Audio();
-backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
-backgroundMusic.volume = 0.5;
-backgroundMusic.play();
-backgroundMusic.loop = true;
 
 $('#tune-btn').click(function() {
     
-    let backgroundMusic = localStorage.getItem("mute_music");
+    let mutedMusic = localStorage.getItem("mute_music");
     
-    if (backgroundMusic === 'true') {
-        
+    if (mutedMusic === 'true') {
         localStorage.setItem("mute_music",'false');
-    } else { 
-        localStorage.setItem("mute_music",'true');
-    }
-});
-
-$(document).ready(function() {
-    var tunePlay = false;
-    let backgroundMusic = localStorage.getItem ("mute_music");
-    if (backgroundMusic === 'true') {
-       tunePlay.pause();
-    } else {
-       tunePlay.play();
-    }
-    
-});
-    
-/*
-    var tunePlay = localStorage.getItem('tunePlay');
-    if (!tunePlay || tunePlay !== 'true') {
-        tunePlay = false;
-        backgroundMusic.pause();
-        tunePlay.text("Play Sound");
-    }
-    else {
-        tunePlay = true;
         backgroundMusic.play();
-        tunePlay.text("Sound Mute");
+        $('#toggleMute').text('Disable Sound');
+        
+    } else if(mutedMusic === 'false') { 
+        localStorage.setItem("mute_music",'true');
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        $('#toggleMute').text('Enable Sound');
     }
-    localStorage.setItem('tunePlay', String(backgroundMusic));
-    
-    document.getElementById("tune-btn").style.fontFamily = "Oswald,sans-serif";
 });
-*/ 
