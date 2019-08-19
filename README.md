@@ -24,9 +24,9 @@ A "mute sound" option is added to the top left of the screen to make it able to 
 
 ## General User Stories:
 
-As a type of user, I would like to be able to enjoy a simple memory card game with a visually appealing lay-out.
-As a type of user, I would like to be able to find small rewards when completing a stage level.
-As a type of user, I would like to play a game that doens take too long to finsish but does include some kind of a challenge.
+* As a type of user, I would like to be able to enjoy a simple memory card game with a visually appealing lay-out.
+* As a type of user, I would like to be able to find small rewards when completing a stage level.
+* As a type of user, I would like to play a game that doens take too long to finsish but does include some kind of a challenge.
 
 ## Real Life User Stories:
 
@@ -77,7 +77,8 @@ The JavaScript files were tested using https://jshint.com/ by direct input of th
 The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.
 
 ### Bugs
-Had some issues with the re-sizing of the tiles on smaller devices. 
+Had some issues with the re-sizing of the tiles on smaller devices. Since these kind of games are not made for small mobile devices, I kept iPad size in mind as the smallest easy accesible play-size.
+
 
 ### Deployment
 The project was developed using the AWS IDE. New features or changes made to the code, were added and committed to the local repository. 

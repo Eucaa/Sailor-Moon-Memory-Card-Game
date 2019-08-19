@@ -315,6 +315,9 @@ p {
   height: 25px;
   width: auto;
   font-size: small;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1px;
 }
 
 #tune-btn {
@@ -324,15 +327,7 @@ p {
   background-color: crimson;
 }
 
-@media (max-width: 770px) {
-
-  tiles {
-    width: 50%;
-  }
-
-  .card .front .back {
-    height: 2rem;
-    width: 2rem;
-  }
-
+.crimson-clr {
+  color: crimson;
+  font-size: 20px;
 }

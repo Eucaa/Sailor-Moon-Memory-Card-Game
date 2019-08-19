@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sailor Moon TEST4</title>
+  <title>Sailor Moon Memory Card Game</title>
 
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -24,12 +23,10 @@
           <h4 class="modal-title-size oswald">How to Play</h4>
         </div>
         <div class="modal-body">
-          <img class="help-img" src="assets/images/help-btn.png"></img>
+          <img class="help-img" src="assets/images/help-btn.png" alt="image">
           <h6 class="oswald">Try to match two cards of the same character before the timer runs out! </h6> <br>
-          <p class="oswald">* Two cards turned counts as one move. <br> * Turning an already matched card will cost you an extra move, so be careful! <br> 
-          * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all! <br>
-          <br>
-          * <i>To disable and enable sound, click the the red button in the top left corner of the game.</i></p>
+          <p class="oswald">* Two cards turned counts as one move. <br> * Turning an already matched card will cost you an extra move, so be careful! <br> * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all! <br>
+            <br> * <i>To disable and enable sound, click the the <span class="crimson-clr">red button</span> in the top left corner of the game.</i></p>
         </div>
         <div class="modal-footer">
           <button type="button" id="startUp" class="btn btn-secondary btn-color1 oswald" data-dismiss="modal">Start Game</button>
@@ -39,14 +36,12 @@
     </div>
   </div>
 
-
-  <button type="button" id="tune-btn" class="btn btn-secondary btn-click-size tune-btn-style" src="assets/images/lunaBall.png">  
+  <button type="button" id="tune-btn" class="btn btn-secondary btn-click-size tune-btn-style">  
     <audio>
       <source id="audioPlayer" src="assets/audio/sailor-moon-tune.mp3" type='audio/mp3' />
     </audio>
-    <h6 id="toggleMute" class="tune-btn-style oswald">Disable Sound</h6>
+    <div id="toggleMute" class="tune-btn-style oswald">Disable Sound</div>
   </button>
-
 
   <h1>Sailor Moon Game Test</h1>
 
@@ -63,21 +58,21 @@
     <div class="btn-group" role="group" aria-label="Basic example">
       <div class="container">
         <a href="index3.html" style="text-decoration:none;">   
-        <img src="assets/images/stage-btn.png" alt="stage one"></img>     
+        <img src="assets/images/stage-btn.png" alt="stage one">     
         <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage One</h6> 
         </a>
       </div>
       <div class="container">
         <a href="index.html" style="text-decoration:none;">
-        <img src="assets/images/stage-btn.png" alt="stage two"></img>     
+        <img src="assets/images/stage-btn.png" alt="stage two">     
         <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage Two</h6>
         </a>
       </div>
       <div class="container">
         <a href="index5.html" style="text-decoration:none;">
-        <img src="assets/images/stage-btn.png" alt="stage three"></img>     
+        <img src="assets/images/stage-btn.png" alt="stage three">     
         <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage Three</h6>
         </a>
@@ -88,19 +83,19 @@
   <div id="game">
   </div>
 
-  <div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modal-color1">
         <div class="modal-header">
-          <h5 class="modal-title title-style" id="exampleModalLabel">Congratulations, you've won!</h5>
+          <h5 class="modal-title title-style">Congratulations, you've won!</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
         <div class="modal-body">
           <div class="content-1">
-            <img class="congrats-img2" src="assets/images/giggle.gif"></img>
-            <p class="oswald">You have made a total of <span id="finalMove"> </span> moves in <span id="totalTime"> </span> seconds! </p>
+            <img class="congrats-img2" src="assets/images/giggle.gif" alt="image">
+            <p class="oswald">You have made a total of <span id="finalMove"> </span> moves in <br> <span id="totalTime"> </span> seconds! </p>
             <p class="oswald">Want to retry? Please click the <br> "Try Again" button.</p>
           </div>
         </div>
@@ -111,18 +106,18 @@
     </div>
   </div>
 
-  <div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modal-color2">
         <div class="modal-header">
-          <h5 class="modal-title modal-title-size oswald" id="exampleModalLabel">Time's up!</h5>
+          <h5 class="modal-title modal-title-size oswald">Time's up!</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
         <div class="modal-body">
           <div class="content-2">
-            <img class="help-img" src="assets/images/artemis-retry.png"></img>
+            <img class="help-img" src="assets/images/artemis-retry.png" alt="image">
             <p class="oswald">You made a total of <span id="moveCounter"> </span> move(s). </p>
             <p class="oswald">Want to retry? Please click the "Try Again" button.</p>
           </div>
@@ -137,7 +132,6 @@
   <footer>
     <p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
   </footer>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
