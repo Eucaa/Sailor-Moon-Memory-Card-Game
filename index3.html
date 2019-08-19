@@ -26,7 +26,9 @@
         <h6 class="oswald">Try to match two cards of the same character before the timer runs out! </h6> <br>
         <p class="oswald">* Two cards turned counts as one move. <br>
         * Turning and already matched card will cost you an extra move, so be careful!<br> 
-          * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all!</p>
+          * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all! <br>
+          <br>
+          * <i>To disable and enable sound, click the the red button in the top left corner of the game.</i></p>
       </div>
       <div class="modal-footer">
         <button type="button" id="startUp" class="btn btn-secondary btn-color1 oswald" data-dismiss="modal">Start Game</button>
@@ -36,12 +38,12 @@
   </div>
 </div>
 
-<button type="button" id="tune-btn" class="btn btn-secondary btn-click-size tune-btn-style">  
-<audio>
-    <source id="audioPlayer" src="assets/audio/shiny-whoosh.mp3" type='audio/mp3'>
-</audio>
- <h6 class="tune-btn-style">Mute Sound</h6>
-</button>
+<button type="button" id="tune-btn" class="btn btn-secondary btn-click-size tune-btn-style" src="assets/images/lunaBall.png">  
+    <audio>
+      <source id="audioPlayer" src="assets/audio/sailor-moon-tune.mp3" type='audio/mp3' />
+    </audio>
+    <h6 id="toggleMute" class="tune-btn-style oswald">Disable Sound</h6>
+  </button>
         
     <h1>Sailor Moon Game Test</h1>
 
@@ -64,7 +66,7 @@
         </a> 
         </div>
         <div class="container">
-        <a href="index4.html" style="text-decoration:none;">
+        <a href="index.html" style="text-decoration:none;">
         <img src="assets/images/stage-btn.png" alt="stage two"></img>     
         <button type="button" class="btn btn-secondary btn-click-size"></button>
         <h6 class="stage-color">Stage Two</h6>

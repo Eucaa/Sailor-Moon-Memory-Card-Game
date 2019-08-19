@@ -162,43 +162,44 @@ cardList.forEach((item, index, arr) => {
     card.appendChild(front);
     card.appendChild(back);
     card.addEventListener('click', function(event) {
-        console.log("clicked on card: "+ index);
+        console.log("clicked on card: " + index);
         let clicked = event.target;
         let count = $(".selected").length;
-        console.log("sum of total selected items = "+ count);
+        console.log("sum of total selected items = " + count);
         if (count < 2) {
             count++;
             if (count === 1) { // Added a parentNode, since clicking on an inner div (front- or back class) and the data-name is still on the outer div (card).
                 firstTry = clicked.parentNode.dataset.name;
                 console.log(firstTry);
-            } else if (count === 2) {
+            }
+            else if (count === 2) {
                 secondTry = clicked.parentNode.dataset.name;
                 console.log(secondTry);
             }
-             clicked.parentNode.classList.add('selected');
-        } 
-        if(count == 2) {
+            clicked.parentNode.classList.add('selected');
+        }
+        if (count == 2) {
             moveCounter++;
             let waiter = setTimeout(function() {
                 if (firstTry !== '' && secondTry !== '') { // If firstTry and secondGuess do not share equal value or type... 
                     if (firstTry === secondTry) { // The match checker, on success or fail
                         console.log("we found a match");
                         let items = $(".selected");
-                        for(let i = 0; i < items.length; i++) {
+                        for (let i = 0; i < items.length; i++) {
                             items[i].classList.add('match');
                         }
                     }
-                    
+
                 }
-                
+
                 let correctCount = $(".match").length;
-                if(correctCount === cardList.length) {
+                if (correctCount === cardList.length) {
                     $('#congrats-modal').modal('show');
                     document.getElementById("finalMove").innerHTML = moveCounter;
                     document.getElementById("totalTime").innerHTML = originalCounter - counter;
                     $('#timesUp-modal').remove();
                 }
-                
+
                 count = 0;
                 firstTry = '';
                 secondTry = '';
@@ -207,12 +208,17 @@ cardList.forEach((item, index, arr) => {
                     card.classList.remove('selected');
                 });
             }, 1000);
-            
-        }
-        
-        
 
-        
+        }
+
+        /* function flipLock () {
+            if (firstTry === secondTry) {
+            $('.card').filter($('.match'));
+            cardList = [];
+            moveCounter=moveCounter+1;
+            }        
+        } */
+
         $("#moves").html("" + moveCounter);
     });
 });
@@ -234,14 +240,13 @@ function startGame() {
             console.log(moveCounter);
             $("#moveCounter").text(moveCounter);
 
-        } else {
+        }
+        else {
             $('#time').text(counter);
             console.log("Timer --> " + counter);
         }
 
     }, 1000);
-
-
 
 }
 
@@ -254,26 +259,53 @@ $(window).ready(function() {
 
 document.getElementById("startUp").addEventListener("click", resetAll);
 
+backgroundMusic = new Audio();
+backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
+backgroundMusic.volume = 0.3;
+backgroundMusic.loop = true;
+
+//Als je naar de website toegaat
 $(document).ready(function() {
     $(".startAgain").click(function() {
         location.reload(true);
     });
+    
+    let isMusicMuted = localStorage.getItem ("mute_music");
+    
+    if(isMusicMuted == undefined) {
+        localStorage.setItem("mute_music",'false');
+        $('#toggleMute').text('Disable Sound');
+        backgroundMusic.play();
+    } 
+    else if (isMusicMuted === 'false') {
+       backgroundMusic.play();
+       $('#toggleMute').text('Disable Sound');
+    }
+    else if(isMusicMuted === 'true') {
+        $('#toggleMute').text('Enable Sound');
+        
+    } else {
+        localStorage.setItem("mute_music",'false');
+        $('#toggleMute').text('Disable Sound');
+        backgroundMusic.play();
+    }
+    document.getElementById("tune-btn").style.fontFamily = "Oswald,sans-serif";
 });
 
-var tunePlay=false;
-$("audio")[0].play(); 
 
-$('#tune-btn').click(function(){
+$('#tune-btn').click(function() {
     
-    var $this = $(this);
-  if(tunePlay)
-    {
-      tunePlay=false;
-      $this.text('play sounds'); 
-      
-      }else{
-        tunePlay=true;
-      $this.text('Sound Muted'); 
-        }
-              
+    let mutedMusic = localStorage.getItem("mute_music");
+    
+    if (mutedMusic === 'true') {
+        localStorage.setItem("mute_music",'false');
+        backgroundMusic.play();
+        $('#toggleMute').text('Disable Sound');
+        
+    } else if(mutedMusic === 'false') { 
+        localStorage.setItem("mute_music",'true');
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        $('#toggleMute').text('Enable Sound');
+    }
 });

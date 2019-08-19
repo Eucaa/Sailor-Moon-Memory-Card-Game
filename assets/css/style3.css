@@ -35,13 +35,12 @@ body {
 }
 
 h1 {
-    font-family: 'Great Vibes', cursive;
-    font-weight: 500;
-    text-align: center;
-    font-size: 3em;
-    text-transform: full-width;
-    padding-top: 20px;
-    color: #fff0fa;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 500;
+  text-align: center;
+  font-size: 3em;
+  text-transform: full-width;
+  color: #fff0fa;
 }
 
 .tiles {
@@ -85,8 +84,8 @@ h1 {
 .front {
   position: absolute;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-          
+  backface-visibility: hidden;
+
 }
 
 .front {
@@ -114,23 +113,24 @@ h1 {
 }
 
 .match .front {
-  background: rgba(0,0,0,.7) !important;
+  background: rgba(0, 0, 0, .7) !important;
 }
 
 /* --- Score Panel --- */
+
 .score-panel {
-    text-align: center;
-    margin: 1em;
-    font-family: 'Oswald', sans-serif;
-    color: #fff0fa;
+  text-align: center;
+  margin: 1em;
+  font-family: 'Oswald', sans-serif;
+  color: #fff0fa;
 }
 
 .move {
-    padding-right: 1rem;
+  padding-right: 1rem;
 }
 
 .timer {
-      padding-right: 1rem;
+  padding-right: 1rem;
 }
 
 /* --- Stage buttons --- */
@@ -169,11 +169,11 @@ h1 {
 }
 
 .btn-secondary:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
@@ -183,21 +183,21 @@ h1 {
 }
 
 .container .btn:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
-    
+
 .btn-click-size {
   cursor: pointer;
-    height: 7rem;
-    width: 5rem;
+  height: 7rem;
+  width: 5rem;
 }
 
 .btn-group {
   width: 23rem;
 }
 
-.btn { 
-  text-decoration:none;
+.btn {
+  text-decoration: none;
 }
 
 a {
@@ -219,10 +219,11 @@ a {
   border-bottom: 0;
 }
 
-.modal-title-size { 
-      font-size: xx-large;;
+.modal-title-size {
+  font-size: xx-large;
+  ;
 }
-  
+
 .btn-color1 {
   background-color: black;
   border-color: black;
@@ -236,25 +237,25 @@ a {
 }
 
 .btn-secondary:hover {
-    color: #fff;
-    background-color: #20547b;
-    border-color: #20547b;
+  color: #fff;
+  background-color: #20547b;
+  border-color: #20547b;
 }
 
 .content-1 {
-    color: #2c7abf;
-    font-size: large;
-}  
-
-.title-style {
-    line-height: 1.5;
-    color: #2c7abf;
-    font-size: 45px;
-    font-family: Great Vibes;
+  color: #2c7abf;
+  font-size: large;
 }
 
-.modal-footer { 
-      border-top: none;
+.title-style {
+  line-height: 1.5;
+  color: #2c7abf;
+  font-size: 45px;
+  font-family: Great Vibes;
+}
+
+.modal-footer {
+  border-top: none;
 }
 
 .oswald {
@@ -265,27 +266,19 @@ a {
 /* --- Additional Styling --- */
 
 .help-img {
-    width: 75px;
-    height: 100px;
-    position: relative;
-    float: right;
-    margin: 20px;
+  width: 75px;
+  height: 100px;
+  position: relative;
+  float: right;
+  margin: 20px;
 }
 
-.congrats-img {
-    width: 175px;
-    height: 135px;
-    position: relative;
-    float: right;
-    margin: 20px;
-}
-
-.sailor-smile {
-    width: 170px;
-    height: 170px;
-    position: relative;
-    float: right;
-    margin: 20px;
+.congrats-img2 {
+  width: 150px;
+  height: 135px;
+  position: relative;
+  float: right;
+  margin: 20px;
 }
 
 .disclaimer {
@@ -297,36 +290,49 @@ a {
 }
 
 .stage-swap {
-  display:block;
+  display: block;
   width: 10rem;
   border-style: none;
 }
 
 .stage-btn {
-  margin-bottom:5px;
-  display:block;
+  margin-bottom: 5px;
+  display: block;
   border-style: none;
   width: 100%;
 }
 
 p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .stage-color {
   color: #5f3a58;
-}  
+}
 
 .tune-btn-style {
   height: 25px;
   width: auto;
   font-size: small;
-} 
+}
 
 #tune-btn {
-    height: 25px;
-    width: auto;
-    font-size: small;
-    background-color: crimson;
+  height: 25px;
+  width: auto;
+  font-size: smaller;
+  background-color: crimson;
+}
+
+@media (max-width: 770px) {
+
+  tiles {
+    width: 50%;
+  }
+
+  .card .front .back {
+    height: 2rem;
+    width: 2rem;
+  }
+
 }

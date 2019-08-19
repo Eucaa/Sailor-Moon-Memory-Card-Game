@@ -241,7 +241,7 @@ document.getElementById("startUp").addEventListener("click", resetAll);
 
 backgroundMusic = new Audio();
 backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
-backgroundMusic.volume = 0.5;
+backgroundMusic.volume = 0.3;
 backgroundMusic.loop = true;
 
 //Als je naar de website toegaat
@@ -263,6 +263,7 @@ $(document).ready(function() {
     }
     else if(isMusicMuted === 'true') {
         $('#toggleMute').text('Enable Sound');
+        
     } else {
         localStorage.setItem("mute_music",'false');
         $('#toggleMute').text('Disable Sound');

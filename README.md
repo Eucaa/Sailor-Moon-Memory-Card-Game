@@ -89,7 +89,7 @@ Step 2: Under GitHub Pages -> Source is a scrolldown box titled None. Click it a
 
 Step 3: Click master branch
 
-Step 4: YOu will  be automatically taken to the top of the page where in a light blue bar will be stated "Github Pages source saved".
+Step 4: You will  be automatically taken to the top of the page where in a light blue bar will be stated "Github Pages source saved".
 
 Step 5: You then scroll down to GitHub Pages where will be stated "Your site is ready to be published at "https://username.github.io/gihub-projectname/"
 
