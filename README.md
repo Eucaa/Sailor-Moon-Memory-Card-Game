@@ -1,6 +1,6 @@
 # Sailor Moon Memory Card Game
 
-To view and play the game, please click on the following link: https://github.com/Eucaa/Sailor-Moon-Memory-Card-Game
+To view and play the game, please click on the following link: https://eucaa.github.io/Sailor-Moon-Memory-Card-Game/
 
 This game has been created for leisurely entertainment for multiple ages. The genre is from the international well-know and renouded Japanese manga- and animation sereis Sailor Moon.
 The game lets people find a match of two cards of the same image. Two turned cards count as one move. Itś best to make as less moves as possible. 
@@ -30,9 +30,9 @@ A "mute sound" option is added to the top left of the screen to make it able to 
 
 ## Real Life User Stories:
 
-User 1: I have some time on my hands and would like to play a small game.
-User 2: I'm interested (or want to be interested) in playing game from one of my all-time favorite Japanese anime/manga series.
-User 3: When I play a game, I would like to have a small stimulation (a "reward") to start and complete other levels.
+* User 1: I have some time on my hands and would like to play a small game.
+* User 2: I'm interested (or want to be interested) in playing game from one of my all-time favorite Japanese anime/manga series.
+* User 3: When I play a game, I would like to have a small stimulation (a "reward") to start and complete other levels.
 
 ## Features
 How-to-Play function - Showing a pop-up with instructions on how to play the game, what NOT to do to prevent unnecessary move-loss and what reward can be expected with completion. Pressing "start game" will (re)start the game.
@@ -92,7 +92,7 @@ Step 3: Click master branch
 
 Step 4: You will  be automatically taken to the top of the page where in a light blue bar will be stated "Github Pages source saved".
 
-Step 5: You then scroll down to GitHub Pages where will be stated "Your site is ready to be published at "https://username.github.io/gihub-projectname/"
+Step 5: You then scroll down to GitHub Pages where will be stated "Your site is ready to be published at "https://eucaa.github.io/Sailor-Moon-Memory-Card-Game/"
 
 Step 6: Click on the url and you will be auto-referred to the published webpage.
 
@@ -102,15 +102,19 @@ Step 7: When returning to the github repository settings, scroll down to GitHub 
 (https://github.com/Eucaa/Sailor-Moon-Memory-Card-Game)
 
 The site has been deployed using GitHub Pages and is available to visit here:
-
+https://eucaa.github.io/Sailor-Moon-Memory-Card-Game/
 
 ### Credits
 The base of the codes used for this project came from the following sources:
 
 
+
 ### Media
 Background image was taken from [getwallpapers](https://www.http://getwallpapers.com/). 
-Tile image where taken from [wikipedia](https://en.wikipedia.org/wiki/Main_Page) van [wiki Fandom](https://sailormoon.fandom.com/wiki/Sailor_Moon_Wiki)
+Tile images where taken from [wikipedia](https://en.wikipedia.org/wiki/Main_Page) van [wiki Fandom](https://sailormoon.fandom.com/wiki/Sailor_Moon_Wiki)
+Overlayer and modal image Stage One where taken from [giphy](https://giphy.com/)
+Stage Two modal gif was taken from [Tumblr](https://www.tumblr.com/search/sailor%20moon%20transparent%20gif)
+Stage Three modal gif was taken from [picsart](https://picsart.com/i/gif-anime-kawaii-cute-chibi-sailormoon-transformation-186507977002202)
 
 ### Acknowledgment
 I would like to thank my mentor Anthony Ngene, Arjan Speiard and the tutors of Code Institute.

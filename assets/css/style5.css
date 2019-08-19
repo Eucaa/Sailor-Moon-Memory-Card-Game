@@ -321,7 +321,7 @@ p {
 #tune-btn {
     height: 25px;
     width: auto;
-    font-size: small;
+    font-size: smaller;
     background-color: crimson;
 }
 
