@@ -1,143 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sailor Moon Memory Game</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sailor Moon Memory Game</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/lunaBall.png">
-
-</head>
-
-<body>
-
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content modal-color2">
-        <div class="modal-header">
-          <h4 class="modal-title-size oswald">How to Play</h4>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/images/lunaBall.png" />
+    </head>
+    <body>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content modal-color2">
+            <div class="modal-header">
+            <h4 class="modal-title-size oswald">How to Play</h4>
+            </div>
+            <div class="modal-body">
+            <img class="help-img" src="assets/images/help-btn.png" alt="image">
+            <h6 class="oswald">Try to match two cards of the same character before the timer runs out! </h6> <br>
+            <p class="oswald">* Two cards turned counts as one move. <br> * Turning an already matched card will cost you an extra move, so be careful! <br> * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all! <br>
+                <br> * <i>To disable and enable sound, click the the <span class="crimson-clr">red button</span> in the top left corner of the game.</i></p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" id="startUp" class="btn btn-secondary btn-color1 oswald" data-dismiss="modal">Start Game</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <img class="help-img" src="assets/images/help-btn.png" alt="image">
-          <h6 class="oswald">Try to match two cards of the same character before the timer runs out! </h6> <br>
-          <p class="oswald">* Two cards turned counts as one move. <br> * Turning an already matched card will cost you an extra move, so be careful! <br> * Every cleared stage will give you a new Sailor Moon image. <br> Try and clear them all! <br>
-            <br> * <i>To disable and enable sound, click the the <span class="crimson-clr">red button</span> in the top left corner of the game.</i></p>
         </div>
-        <div class="modal-footer">
-          <button type="button" id="startUp" class="btn btn-secondary btn-color1 oswald" data-dismiss="modal">Start Game</button>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <button type="button" id="tune-btn" class="btn btn-secondary btn-click-size tune-btn-style">  
-    <audio>
-      <source id="audioPlayer" src="assets/audio/sailor-moon-tune.mp3" type='audio/mp3' />
-    </audio>
-    <div id="toggleMute" class="tune-btn-style oswald">Disable Sound</div>
-  </button>
+    <button type="button" id="toggleMute" class="btn btn-secondary btn-click-size tune-btn-style tune-btn-style oswald">  
+        <audio>
+        <source id="audioPlayer" src="assets/audio/sailor-moon-tune.mp3" type='audio/mp3' />
+        </audio>
+        Disable Sound
+    </button>
 
-  <h1>Sailor Moon Memory Game</h1>
+    <h1>Sailor Moon Memory Game</h1>
 
-  <div class="score-panel">
-    <span class="move">
-        <span id="moves">0</span> Moves
-    </span>
-    <span class="timer">
-            <span id="time">0</span> seconds left
-    </span>
-  </div>
-
-  <nav class="col text-center">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <div class="container">
-        <a href="index3.html" style="text-decoration:none;">   
-        <img src="assets/images/stage-btn.png" alt="stage one">     
-        <button type="button" class="btn btn-secondary btn-click-size"></button>
-        <h6 class="stage-color">Stage One</h6> 
-        </a>
-      </div>
-      <div class="container">
-        <a href="index.html" style="text-decoration:none;">
-        <img src="assets/images/stage-btn.png" alt="stage two">     
-        <button type="button" class="btn btn-secondary btn-click-size"></button>
-        <h6 class="stage-color">Stage Two</h6>
-        </a>
-      </div>
-      <div class="container">
-        <a href="index5.html" style="text-decoration:none;">
-        <img src="assets/images/stage-btn.png" alt="stage three">     
-        <button type="button" class="btn btn-secondary btn-click-size"></button>
-        <h6 class="stage-color">Stage Three</h6>
-        </a>
-      </div>
+    <div class="score-panel">
+        <span class="move">
+            <span id="moves">0</span> Moves
+        </span>
+        <span class="timer">
+                <span id="time">0</span> seconds left
+        </span>
     </div>
-  </nav>
 
-  <div id="game">
-  </div>
+    <nav class="col text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="container">
+            <a id="button1" style="text-decoration:none;" class="btn btn-secondary btn-click-size">   
+                <img src="assets/images/stage-btn.png" alt="stage one">     
+                <h6 class="stage-color">Stage One</h6> 
+            </a>
+        </div>
+        <div class="container">
+            <a id="button2" style="text-decoration:none;" class="btn btn-secondary btn-click-size">
+                <img src="assets/images/stage-btn.png" alt="stage two">     
+                <h6 class="stage-color">Stage Two</h6>
+            </a>
+        </div>
+        <div class="container">
+            <a id="button3" style="text-decoration:none;" class="btn btn-secondary btn-click-size">
+                <img src="assets/images/stage-btn.png" alt="stage three">     
+                <h6 class="stage-color">Stage Three</h6>
+            </a>
+        </div>
+        </div>
+    </nav>
 
-  <div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content modal-color1">
-        <div class="modal-header">
-          <h5 class="modal-title title-style">Congratulations, you've won!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-          <div class="content-1">
-            <img class="congrats-img2" src="assets/images/giggle.gif" alt="image">
-            <p class="oswald">You have made a total of <span id="finalMove"> </span> moves in <br> <span id="totalTime"> </span> seconds! </p>
-            <p class="oswald">Want to retry? Please click the <br> "Try Again" button.</p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary startAgain btn-color2 oswald" data-dismiss="modal">Try Again</button>
-        </div>
-      </div>
+    <div id="game">
     </div>
-  </div>
 
-  <div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content modal-color2">
-        <div class="modal-header">
-          <h5 class="modal-title modal-title-size oswald">Time's up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal fade" id="congrats-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content modal-color1">
+            <div class="modal-header">
+            <h5 class="modal-title title-style">Congratulations, you've won!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <div class="content-1">
+                <img id="img" class="congrats-img2" src="#" alt="image">
+                <p class="oswald">You have made a total of <span id="finalMove"> </span> moves in <br> <span id="totalTime"> </span> seconds! </p>
+                <p class="oswald">Want to retry? Please click the <br> "Try Again" button.</p>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary startAgain btn-color1 oswald" data-dismiss="modal">Try Again</button>
+            <button type="button" id="congrats-btn" class="btn btn-secondary btn-color2 oswald" data-dismiss="modal">Next Stage!</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <div class="content-2">
-            <img class="help-img" src="assets/images/artemis-retry.png" alt="image">
-            <p class="oswald">You made a total of <span id="moveCounter"> </span> move(s). </p>
-            <p class="oswald">Want to retry? Please click the "Try Again" button.</p>
-          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" id="reset-btn" class="btn btn-secondary startAgain btn-color1 oswald" data-dismiss="modal">Try Again</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <footer>
-    <p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
-  </footer>
+    <div class="modal fade" id="timesUp-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content modal-color2">
+            <div class="modal-header">
+            <h5 class="modal-title modal-title-size oswald">Time's up!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <div class="content-2">
+                <img class="help-img" src="assets/images/artemis-retry.png" alt="image">
+                <p class="oswald">You made a total of <span id="moveCounter"> </span> move(s). </p>
+                <p class="oswald">Want to retry? Please click the "Try Again" button.</p>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" id="reset-btn" class="btn btn-secondary startAgain btn-color1 oswald" data-dismiss="modal">Try Again</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="assets/js/script.js"></script>
+    <footer>
+        <p class="disclaimer">All logos are property of their respective owners. No Copyright infringement intended.</p>
+    </footer>
 
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+    </body>
 
 </html>

@@ -21,7 +21,6 @@ All pop-ups of the three stages include a unique animation. The higher stages wi
 New images are added into the game at the higher stages to let the user get introduced to new charaters.  
 A "mute sound" option is added to the top left of the screen to make it able to mute the starting- tune.
 
-
 ## General User Stories:
 
 * As a type of user, I would like to be able to enjoy a simple memory card game with a visually appealing lay-out.
@@ -51,9 +50,10 @@ A note for this has been given in the shape of a penalty in the How-to-Play feat
 A "mute sound" option has been provided to close the sound of the opnening tune at the start of the game.
 
 ## Future features
-* Adding different backgrounds for every stage level and including other background animations.
+* Adding different backgrounds for every stage level and including other background-overlay animations.
 * Adding more stage levels.
 * Improving the functionality of the tiles itself when monkey testing.
+* Adding a limited amount moves to be made per game, for every stage.
 
 ### CSS
 CSS3 has been used for styling the game.
@@ -71,14 +71,17 @@ The project uses Bootstrap to allow for extra responsiveness of the html5- and J
 The project uses Google Fonts to apply fonts "Great Vibes" and "Oswald" to the webpage.
 
 ### Testing
-The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input.
-To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools, verifying how the site reacted in different screen sizes.
-The JavaScript files were tested using https://jshint.com/ by direct input of the files on the validator.
-The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.
+1. The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input. 
+2. To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools, verifying how the site reacts in different screen sizes.
+3. The JavaScript files were tested using https://jshint.com/ by direct input of the files on the validator.
+4. The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.
 
 ### Bugs
-Had some issues with the re-sizing of the tiles on smaller devices. Since these kind of games are not made for small mobile devices, I kept iPad size in mind as the smallest easy accesible play-size.
-
+The following issues where found when perfoming testing:
+1. 
+2. Had some issues with the re-sizing of the tiles on smaller devices. Since these kind of games are not made for small mobile devices, I kept iPad size in mind as the smallest easy accesible play-size.
+3. 
+4. 
 
 ### Deployment
 The project was developed using the AWS IDE. New features or changes made to the code, were added and committed to the local repository. 

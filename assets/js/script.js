@@ -1,271 +1,432 @@
-var cardList = [{
-        name: 'jupiter',
-        img: "assets/images/jupiter.png",
-
+/*jslint browser */
+/*global $, Audio */
+let cardList1 = [
+    {
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
     },
     {
-        name: 'luna',
+        name: "luna",
         img: "assets/images/luna.jpg"
-
     },
     {
-        name: 'mars',
+        name: "mars",
         img: "assets/images/mars.jpg"
-
     },
     {
-        name: 'mercury',
+        name: "mercury",
         img: "assets/images/mercury.jpg"
-
     },
     {
-        name: 'moon',
+        name: "moon",
         img: "assets/images/moon.jpg"
-
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
-
-    },
-    {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
-
-    },
-    {
-        name: 'venus',
+        name: "venus",
         img: "assets/images/venus.jpg"
-
     },
     {
-        name: 'jupiter',
-        img: "assets/images/jupiter.png",
-
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
     },
     {
-        name: 'luna',
+        name: "luna",
         img: "assets/images/luna.jpg"
-
     },
     {
-        name: 'mars',
+        name: "mars",
         img: "assets/images/mars.jpg"
-
     },
     {
-        name: 'mercury',
+        name: "mercury",
         img: "assets/images/mercury.jpg"
-
     },
     {
-        name: 'moon',
+        name: "moon",
         img: "assets/images/moon.jpg"
-
     },
     {
-        name: 'neptune',
-        img: "assets/images/neptune.jpg"
-
-    },
-    {
-        name: 'uranus',
-        img: "assets/images/uranus.jpg"
-
-    },
-    {
-        name: 'venus',
+        name: "venus",
         img: "assets/images/venus.jpg"
-
-    },
+    }
 ];
 
-cardList.sort(() => 0.5 - Math.random());
+let cardList2 = [
+    {
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
+    },
+    {
+        name: "luna",
+        img: "assets/images/luna.jpg"
+    },
+    {
+        name: "mars",
+        img: "assets/images/mars.jpg"
+    },
+    {
+        name: "mercury",
+        img: "assets/images/mercury.jpg"
+    },
+    {
+        name: "moon",
+        img: "assets/images/moon.jpg"
+    },
+    {
+        name: "neptune",
+        img: "assets/images/neptune.jpg"
+    },
+    {
+        name: "uranus",
+        img: "assets/images/uranus.jpg"
+    },
+    {
+        name: "venus",
+        img: "assets/images/venus.jpg"
+    },
+    {
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
+    },
+    {
+        name: "luna",
+        img: "assets/images/luna.jpg"
+    },
+    {
+        name: "mars",
+        img: "assets/images/mars.jpg"
+    },
+    {
+        name: "mercury",
+        img: "assets/images/mercury.jpg"
+    },
+    {
+        name: "moon",
+        img: "assets/images/moon.jpg"
+    },
+    {
+        name: "neptune",
+        img: "assets/images/neptune.jpg"
+    },
+    {
+        name: "uranus",
+        img: "assets/images/uranus.jpg"
+    },
+    {
+        name: "venus",
+        img: "assets/images/venus.jpg"
+    }
+];
+
+let cardList3 = [
+    {
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
+    },
+    {
+        name: "luna",
+        img: "assets/images/luna.jpg"
+    },
+    {
+        name: "mars",
+        img: "assets/images/mars.jpg"
+    },
+    {
+        name: "mercury",
+        img: "assets/images/mercury.jpg"
+    },
+    {
+        name: "moon",
+        img: "assets/images/moon.jpg"
+    },
+    {
+        name: "chibiusa",
+        img: "assets/images/chibiusa.jpg"
+    },
+    {
+        name: "serenity",
+        img: "assets/images/serenity.jpg"
+    },
+    {
+        name: "venus",
+        img: "assets/images/venus.jpg"
+    },
+    {
+        name: "artemis",
+        img: "assets/images/artemis.png"
+    },
+    {
+        name: "tuxedomask",
+        img: "assets/images/tuxedomask.jpg"
+    },
+    {
+        name: "jupiter",
+        img: "assets/images/jupiter.png"
+    },
+    {
+        name: "luna",
+        img: "assets/images/luna.jpg"
+    },
+    {
+        name: "mars",
+        img: "assets/images/mars.jpg"
+    },
+    {
+        name: "mercury",
+        img: "assets/images/mercury.jpg"
+    },
+    {
+        name: "moon",
+        img: "assets/images/moon.jpg"
+    },
+    {
+        name: "chibiusa",
+        img: "assets/images/chibiusa.jpg"
+    },
+    {
+        name: "serenity",
+        img: "assets/images/serenity.jpg"
+    },
+    {
+        name: "venus",
+        img: "assets/images/venus.jpg"
+    },
+    {
+        name: "artemis",
+        img: "assets/images/artemis.png"
+    },
+    {
+        name: "tuxedomask",
+        img: "assets/images/tuxedomask.jpg"
+    }
+];
+
+//When entering the website...
+$(document).ready(function () {
+    function startLevel(level) {
+        window.location.hash = level;
+        window.location.reload(true);
+    }
+
+    $("#button1").click(function (e) {
+        e.preventDefault();
+        startLevel("#1");
+    });
+
+    $("#button2").click(function (e) {
+        e.preventDefault();
+        startLevel("#2");
+    });
+
+    $("#button3").click(function (e) {
+        e.preventDefault();
+        startLevel("#3");
+    });
+
+    let originalCounter;
+    let cardList;
+    if (window.location.hash === "#2") {
+        cardList = cardList2;
+        originalCounter = 55;
+    } else if (window.location.hash === "#3") {
+        cardList = cardList3;
+        originalCounter = 60;
+        $("body").addClass("wide-view");
+    } else {
+        cardList = cardList1;
+        originalCounter = 50;
+    }
+
+    cardList.sort(() => 0.5 - Math.random());
 
 
-let firstTry = '';
-let secondTry = '';
-let originalCounter = 55;
-let counter = originalCounter;
-let moveCounter = 0;
+    let firstTry = "";
+    let secondTry = "";
+    let counter = originalCounter;
+    let moveCounter = 0;
 
 
-var resetAll = function() {
-    firstTry = '';
-    secondTry = '';
-    counter = 55;
-    moveCounter = 0;
-    $("#moves").html("" + moveCounter);
-};
+    let resetAll = function () {
+        firstTry = "";
+        secondTry = "";
+        counter = originalCounter;
+        moveCounter = 0;
+        $("#moves").html(moveCounter);
+    };
 
-document.getElementById("reset-btn").addEventListener("click", resetAll);
-
-const game = document.getElementById('game');
-
-const tiles = document.createElement('section');
-tiles.setAttribute('class', 'tiles');
-
-game.appendChild(tiles);
-
-
-document.body.onload = startGame();
-
-cardList.forEach((item, index, arr) => {
-    const card = document.createElement('div');
-    card.setAttribute('id', "card-" + index);
-
-    card.classList.add('card');
-
-    card.dataset.name = item.name;
-
-    const front = document.createElement('div');
-    front.classList.add('front');
-
-    const back = document.createElement('div');
-    back.classList.add('back');
-
-    card.style.backgroundImage = `url(${item.img})`;
-
-    tiles.appendChild(card);
-    card.appendChild(front);
-    card.appendChild(back);
-    card.addEventListener('click', function(event) {
-
-        let clicked = event.target;
-        let count = $(".selected").length;
-
-        if (count < 2) {
-            count++;
-            if (count === 1) {
-                firstTry = clicked.parentNode.dataset.name;
-
-            }
-            else if (count === 2) {
-                secondTry = clicked.parentNode.dataset.name;
-
-            }
-            clicked.parentNode.classList.add('selected');
+    $("#congrats-btn").click(function () {
+        if (window.location.hash === "" || window.location.hash === "#1") {
+            startLevel("#2");
+        } else if (window.location.hash === "#2") {
+            startLevel("#3");
         }
-        if (count == 2) {
-            moveCounter++;
-            let waiter = setTimeout(function() {
-                if (firstTry !== '' && secondTry !== '') {
-                    if (firstTry === secondTry) {
 
-                        let items = $(".selected");
-                        for (let i = 0; i < items.length; i++) {
-                            items[i].classList.add('match');
+        resetAll();
+    });
+
+    $("#reset-btn").click(resetAll);
+
+    const game = document.getElementById("game");
+
+    const tiles = document.createElement("section");
+    tiles.setAttribute("class", "tiles");
+
+    game.appendChild(tiles);
+
+    function startGame() {
+        let interval = window.setInterval(function () {
+            counter -= 1;
+            if (counter <= -1) {
+                clearInterval(interval);
+
+                $("#timesUp-modal").modal("show");
+
+                $("#moveCounter").text(moveCounter);
+
+            } else {
+                $("#time").text(counter);
+            }
+        }, 1000);
+    }
+
+    document.body.onload = startGame();
+
+    cardList.forEach(function (item, index) {
+        const card = document.createElement("div");
+        card.setAttribute("id", "card-" + index);
+
+        card.classList.add("card");
+
+        card.dataset.name = item.name;
+
+        const front = document.createElement("div");
+        front.classList.add("front");
+
+        const back = document.createElement("div");
+        back.classList.add("back");
+
+        card.style.backgroundImage = `url(${item.img})`;
+
+        tiles.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+
+        function getImg(name) {
+            return "assets/images/" + name;
+        }
+
+        $(card).on("click", function (event) {
+
+            let clicked = event.target;
+            let count = $(".selected").length;
+
+            if (count < 2) {
+                count += 1;
+                if (count === 1) {
+                    firstTry = clicked.parentNode.dataset.name;
+
+                } else if (count === 2) {
+                    secondTry = clicked.parentNode.dataset.name;
+                }
+                clicked.parentNode.classList.add("selected");
+            }
+            if (count === 2) {
+                moveCounter += 1;
+                window.setTimeout(function () {
+                    if (firstTry !== "" && secondTry !== "") {
+                        if (firstTry === secondTry) {
+                            $(".selected").off("click");
+                            // ignore is a keyword reserverd by jslint
+                            // to ignore a variable.
+                            $(".selected").each(function (ignore, item) {
+                                $(item).addClass("match");
+                            });
                         }
                     }
 
-                }
+                    let correctCount = $(".match").length;
+                    if (correctCount === cardList.length) {
 
-                let correctCount = $(".match").length;
-                if (correctCount === cardList.length) {
-                    $('#congrats-modal').modal('show');
-                    document.getElementById("finalMove").innerHTML = moveCounter;
-                    document.getElementById("totalTime").innerHTML = originalCounter - counter;
-                    $('#timesUp-modal').remove();
-                }
+                        if (window.location.hash === "" || window.location.hash === "#1") {
+                            $("#img").attr("src", getImg("sailor-smile.png"));
+                        } else if (window.location.hash === "#2") {
+                            $("#img").attr("src", getImg("giggle.gif"));
+                        } else if (window.location.hash === "#3") {
+                            $("#img").attr("src", getImg("transformation.gif"));
+                            $("#congrats-btn").hide();
+                        }
 
-                count = 0;
-                firstTry = '';
-                secondTry = '';
-                var selected = document.querySelectorAll('.selected');
-                selected.forEach(card => {
-                    card.classList.remove('selected');
-                });
-            }, 1000);
+                        $("#finalMove").html(moveCounter);
+                        $("#totalTime").html(originalCounter - counter);
 
-        }
+                        $("#congrats-modal").modal("show");
+                        $("#timesUp-modal").remove();
+                    }
 
-        /* function flipLock () {
-            if (firstTry === secondTry) {
-            $('.card').filter($('.match'));
-            cardList = [];
-            moveCounter=moveCounter+1;
-            }        
-        } */
+                    count = 0;
+                    firstTry = "";
+                    secondTry = "";
+                    let selected = document.querySelectorAll(".selected");
+                    selected.forEach(function (card) {
+                        card.classList.remove("selected");
+                    });
+                }, 1000);
+            }
 
-        $("#moves").html("" + moveCounter);
-    });
-});
-
-
-function startGame() {
-
-    var interval = setInterval(function() {
-        counter--;
-        if (counter <= -1) {
-            clearInterval(interval);
-
-            $('#timesUp-modal').modal('show');
-
-            $("#moveCounter").text(moveCounter);
-
-        }
-        else {
-            $('#time').text(counter);
-        }
-
-    }, 1000);
-
-}
-
-$(window).ready(function() {
-    $('#myModal').modal('show');
-
-});
-
-document.getElementById("startUp").addEventListener("click", resetAll);
-
-backgroundMusic = new Audio();
-backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
-backgroundMusic.volume = 0.3;
-backgroundMusic.loop = true;
-
-$(document).ready(function() {
-    $(".startAgain").click(function() {
-        location.reload(true);
+            $("#moves").html(moveCounter);
+        });
     });
 
-    let isMusicMuted = localStorage.getItem("mute_music");
+    $("#myModal").modal("show");
+    $("#startUp").click(resetAll);
 
-    if (isMusicMuted == undefined) {
-        localStorage.setItem("mute_music", 'false');
-        $('#toggleMute').text('Disable Sound');
+    let backgroundMusic = new Audio();
+    backgroundMusic.src = "assets/audio/sailor-moon-tune.mp3";
+    backgroundMusic.volume = 0.3;
+    backgroundMusic.loop = true;
+
+
+    $(".startAgain").click(function () {
+        window.location.reload(true);
+    });
+
+    let isMusicMuted = window.localStorage.getItem("mute_music");
+
+    if (isMusicMuted === undefined) {
+        window.localStorage.setItem("mute_music", "false");
+        $("#toggleMute").html("Disable Sound");
+        backgroundMusic.play();
+    } else if (isMusicMuted === "false") {
+        backgroundMusic.play();
+        $("#toggleMute").html("Disable Sound");
+    } else if (isMusicMuted === "true") {
+        $("#toggleMute").html("Enable Sound");
+    } else {
+        window.localStorage.setItem("mute_music", "false");
+        $("#toggleMute").html("Disable Sound");
         backgroundMusic.play();
     }
-    else if (isMusicMuted === 'false') {
-        backgroundMusic.play();
-        $('#toggleMute').text('Disable Sound');
-    }
-    else if (isMusicMuted === 'true') {
-        $('#toggleMute').text('Enable Sound');
 
-    }
-    else {
-        localStorage.setItem("mute_music", 'false');
-        $('#toggleMute').text('Disable Sound');
-        backgroundMusic.play();
-    }
-    document.getElementById("tune-btn").style.fontFamily = "Oswald,sans-serif";
-});
+    $("#toggleMute").css("font-family", "Oswald,sans-serif");
 
-$('#tune-btn').click(function() {
+    //ignore is a keyword reserverd by jslint to ignore a variable.
+    $("#timesUp-modal").on("hidden.bs.modal", function (ignore) {
+        window.location.reload(true);
+    });
 
-    let mutedMusic = localStorage.getItem("mute_music");
+    $("#toggleMute").click(function () {
+        let mutedMusic = window.localStorage.getItem("mute_music");
 
-    if (mutedMusic === 'true') {
-        localStorage.setItem("mute_music", 'false');
-        backgroundMusic.play();
-        $('#toggleMute').text('Disable Sound');
+        if (mutedMusic === "true") {
+            window.localStorage.setItem("mute_music", "false");
+            backgroundMusic.play();
+            $("#toggleMute").html("Disable Sound");
 
-    }
-    else if (mutedMusic === 'false') {
-        localStorage.setItem("mute_music", 'true');
-        backgroundMusic.pause();
-        backgroundMusic.currentTime = 0;
-        $('#toggleMute').text('Enable Sound');
-    }
+        } else if (mutedMusic === "false") {
+            window.localStorage.setItem("mute_music", "true");
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0;
+            $("#toggleMute").html("Enable Sound");
+        }
+    });
 });
