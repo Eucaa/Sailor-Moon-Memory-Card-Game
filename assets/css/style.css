@@ -1,10 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Oswald:400,500,600,700,800&display=swap');*/
-
-@font-face {
-      font-family: "bla";
-      src: local('GreatVibes-Regular.ttf') format("ttf"),
-           url('https://eucaa.github.io/Sailor-Moon-Memory-Card-Game/assets/css/GreatVibes-Regular.ttf') format("woff");
-    }
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Oswald:400,500,600,700,800&display=swap');
 
 * {
   -webkit-box-sizing: border-box;
@@ -37,10 +31,10 @@ body {
 }
 
 h1 {
-  -webkit-font-family: 'bla', cursive;
-  -moz-font-family: 'bla', cursive;
-  -o-font-family: 'bla', cursive;
-  font-family: 'bla', cursive;
+  -webkit-font-family: 'Great Vibes', cursive;
+  -moz-font-family: 'Great Vibes', cursive;
+  -o-font-family: 'Great Vibes', cursive;
+  font-family: 'Great Vibes', cursive;
   font-weight: 500;
   text-align: center;
   font-size: 3em;
