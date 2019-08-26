@@ -234,7 +234,7 @@ $(document).ready(function () {
         $("body").addClass("wide-view");
     } else {
         cardList = cardList1;
-        originalCounter = 50;
+        originalCounter = 50000;
     }
 
     cardList.sort(() => 0.5 - Math.random());
