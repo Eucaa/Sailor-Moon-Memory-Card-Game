@@ -80,7 +80,8 @@ The project uses Google Fonts to apply fonts "Great Vibes" and "Oswald" to the w
 1. The HTML and CSS coding was tested by using the W3C Mark Validator Service by direct input. 
 2. To test the responsiveness of the website in phones, tablets, and desktops screens, I have used the Chrome Developer Tools, verifying how the site reacts in different screen sizes.
 3. The JavaScript files were tested using https://jslint.com/ by direct input of the files on the validator, allowing the global variables `$` of `jQuery` and `Audio`.
-4. The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.
+4. The game functionality, tested on multiple browers such as Chrome, Edge, Safari and Firefox.
+5. The game has been tested by some of my friends with the question if the game was clear, easy to use and understandable.
 
 ### Bugs
 The following issues were found when perfoming tests:
@@ -88,6 +89,10 @@ The following issues were found when perfoming tests:
    script.js file. The image tag needed a src attribute to get through the validtor so it was given the hash as source.
 2. Had some issues with the re-sizing of the tiles on smaller devices. Since these kind of games are not made for small mobile devices, I kept iPad size in mind as the smallest easy accesible play-size.
 3. The syntax order of the script.js file was re-adjusted in accordance to the jslint validator. If a match was made the matched cards were still able to get clicked. This has been resolved by turning off the connected CSS animation class.
+4. There is a complication with showing the correct font-family ("Great Vibes") as title when opening the game in Firefox. I have tried to fix this by using the "@font-face" rule, but this did not seem to resolve the issue as of yet.
+   A better solution must be found later.
+5. I have received an overall positive outcome on the test by my friends regarding the game's functionality. The game appears to be fun and easy to play. Reactiveness is good when playing the game normally (no stress testing). 
+   An additional option to add might be to cancel out the "how-to-play" pop-up when the stage has already been played once.
 
 ### Deployment
 The project was developed using the AWS IDE. New features or changes made to the code, were added and committed to the local repository.

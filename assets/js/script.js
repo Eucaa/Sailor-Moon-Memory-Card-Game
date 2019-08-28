@@ -237,7 +237,7 @@ $(document).ready(function () {
         originalCounter = 50;
     }
 
-    cardList.sort(() => 0.5 - Math.random());
+    cardList.sort(function() { return 0.5 - Math.random(); });
 
 
     let firstTry = "";
