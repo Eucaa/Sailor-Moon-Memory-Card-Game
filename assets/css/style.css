@@ -288,9 +288,8 @@ a {
 .disclaimer {
   text-align: center;
   margin: 0;
-  color: #38373a;
-  opacity: 0.7;
-  font-size: small;
+  color: white;
+  font-size: smaller;
 }
 
 .stage-swap {
